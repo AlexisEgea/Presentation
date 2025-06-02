@@ -1,0 +1,77 @@
+/* Welcome Section Styles */
+#welcome-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: black;
+  transition: opacity 0.5s ease-out;
+  color: white;
+}
+
+.welcome-content {
+  animation: fadeIn 2s ease-in;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.welcome-content h1 {
+  font-size: 7em;
+  font-weight: 500;
+  margin-bottom: -0.2em;
+}
+
+.welcome-title {
+  font-size: 4em;
+  font-weight: 300;
+  margin-bottom: -0.1em;
+}
+
+.welcome-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.welcome-scroll {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+#welcome-section.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
