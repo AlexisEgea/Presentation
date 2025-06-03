@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const welcomeSection = document.getElementById('welcome-section');
+    const welcomeSection = document.querySelector('.welcome-section');
     let hasScrolled = false;
 
     // Handle scroll event
     window.addEventListener('scroll', () => {
-        if (!hasScrolled && window.scrollY > 50) {
+        if (!hasScrolled && window.scrollY > 20) {
             welcomeSection.classList.add('fade-out');
             hasScrolled = true;
         }
