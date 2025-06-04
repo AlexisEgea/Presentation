@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Add smooth scroll behavior to the page
+    // Check if the page was reloaded (not a fresh visit) and redirect to home if true
+    if (performance.getEntriesByType("navigation")[0].type === "reload") {
+        window.location.href = "/";
+    }
+
     document.documentElement.style.scrollBehavior = 'smooth';
 });
