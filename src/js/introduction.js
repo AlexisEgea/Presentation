@@ -15,6 +15,7 @@ async function getContent() {
     try {
         const response = await fetch('https://alexisegea.github.io/Presentation/data/introduction-content/content.txt');
         const content = await response.text();
+        console.log(content);
         return formatContent(content);
     } catch (error) {
         console.error('Error loading content:', error);
