@@ -2,3 +2,14 @@
     height: 100vh;
     background: rgb(255, 255, 255, 0.05);
 }
+
+.main-section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.main-section.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+

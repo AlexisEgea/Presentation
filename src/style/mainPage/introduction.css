@@ -1,0 +1,67 @@
+.introduction-section {
+    height: 100vh;
+
+    border-radius: 20px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: black url("../../../data/background/background.png");
+    background-position: calc(100% + 50vw) center;
+    background-size: cover;  /* Added to ensure image covers the container */
+    background-repeat: no-repeat;  /* Added to prevent image repetition */
+}
+
+.introduction-click {
+  font-size: 3vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  
+  z-index: 1;
+}
+
+.introduction-card p {
+    font-size: 2vw;
+
+}
+
+@media screen and (max-width: 768px) {
+    .introduction-section {
+        background-position: calc(50% + 50vw) center;  
+      }
+    .introduction-card p {
+        font-size: 4vw;
+    }
+}
+
+.dezoom-animation {
+    transition: transform 1s ease-in-out;
+    animation: dezoom 1s ease-in-out forwards;
+}
+
+@keyframes dezoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+.zoom-animation {
+    transition: transform 1s ease-in-out;
+    animation: zoom 1s ease-in-out forwards;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,6 +1,4 @@
 /* Google Fonts: Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&display=swap');
-
 html, body {
   scroll-behavior: smooth;
 }
@@ -9,8 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
-}
+  font-family: 'Segoe UI', sans-serif;}
 
 body {
   color: white;
@@ -19,4 +16,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  overflow: hidden;
 }

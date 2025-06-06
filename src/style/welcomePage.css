@@ -39,23 +39,18 @@
   z-index: 1;
 }
 
-.welcome-content h1 {
-  font-size: 9vw;
-  font-weight: 500;
-}
-
 .welcome-title {
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 300;
   line-height: 1.2;
 }
 
 .welcome-subtitle {
-  font-size: 2.5vw;
+  font-size: 3vw;
   font-weight: 300;
 }
 
-.welcome-scroll {
+.welcome-click {
   font-size: 3vw;
   position: absolute;
   left: 50%;
