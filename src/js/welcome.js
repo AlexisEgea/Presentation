@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if the page was reloaded (not a fresh visit) and redirect to home if true
     if (performance.getEntriesByType("navigation")[0].type === "reload") {
-        window.location.href = "/";
+        window.location.href = "/Presentation";
     }
 
     document.documentElement.style.scrollBehavior = 'smooth';
