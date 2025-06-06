@@ -13,7 +13,7 @@ function formatContent(content) {
 
 async function getContent() {
     try {
-        const response = await fetch('../../data/introduction-content/content.txt');
+        const response = await fetch('https://alexisegea.github.io/Presentation/data/introduction-content/content.txt');
         const content = await response.text();
         return formatContent(content);
     } catch (error) {
