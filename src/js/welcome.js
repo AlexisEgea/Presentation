@@ -1,12 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const welcomeSection = document.querySelector('.welcome-section');
-    let hasScrolled = false;
+    const mainSection = document.querySelector('.main-section');
+    let hasClicked = false;
 
-    // Handle scroll event
-    window.addEventListener('scroll', () => {
-        if (!hasScrolled && window.scrollY > 20) {
+    // Ensure main section is hidden by default
+    mainSection.classList.add('hidden');
+
+    // Handle click event on the welcome section
+    welcomeSection.addEventListener('click', () => {
+        if (!hasClicked) {
             welcomeSection.classList.add('fade-out');
-            hasScrolled = true;
+            mainSection.classList.remove('hidden');
+            mainSection.classList.add('visible');
+            hasClicked = true;
         }
     });
 
