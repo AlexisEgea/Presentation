@@ -1,17 +1,54 @@
 .introduction-section {
-    height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  border-radius: 20px;
+  overflow: hidden; 
+  background-color: black;
+  z-index: 0;
+}
 
-    border-radius: 20px;
+.introduction-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  
+  background-image: url("../../../data/background/background.png");
+  background-position: calc(100% + 50vw) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fadeInBackground 1s ease-in 0.5s forwards;
+
+  opacity: 0;
+  z-index: 0; 
+}
 
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.introduction-title {
+  font-size: 5vw;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
 
-    background: black url("../../../data/background/background.png");
-    background-position: calc(100% + 50vw) center;
-    background-size: cover;  /* Added to ensure image covers the container */
-    background-repeat: no-repeat;  /* Added to prevent image repetition */
+.introduction-subtitle {
+  font-size: 3vw;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .introduction-click {
@@ -24,16 +61,40 @@
   z-index: 1;
 }
 
-.introduction-card p {
+.introduction-content {
     font-size: 2vw;
+    font-weight: 300;
+    margin: 0 auto;
+    width: 100%; 
+    margin-top: 2em;
+    padding: 0 1em; 
+    position: relative;
+    z-index: 1;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .introduction-section {
+    .introduction-section::before {
         background-position: calc(50% + 50vw) center;  
       }
-    .introduction-card p {
+    .introduction-content {
         font-size: 4vw;
     }
 }
@@ -63,5 +124,18 @@
     }
     100% {
         transform: scale(1);
+    }
+}
+
+.move-up {
+    animation: moveUp 1s ease-in-out forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-35vh);
     }
 }

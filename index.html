@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexis Egea</title>
-    <link rel="stylesheet" href="src/style/welcomePage.css">
     <link rel="stylesheet" href="src/style/mainPage/introduction.css">
     <link rel="stylesheet" href="src/style/mainPage/mainPage.css">
     <link rel="stylesheet" href="src/style/style.css">
@@ -12,26 +11,21 @@
   </head>
   
   <body>
-    <section class="welcome-section">
-      <div class="welcome-content">
-        <p class="welcome-title">Alexis Egea</p>
-        <p class="welcome-subtitle">Software Development - Automation - Artificial Intelligence Engineer</p>
-      </div>
-      <p class="welcome-click">Click to discover more</p>
-    </section>
-
     <section class="main-section">
-      <section class="introduction-section">
-        <div class="introduction-card">
-          <p class="introduction-content"></p>
+      <section class="introduction-section zoom">
+        <div>
+          <p class="introduction-title">Alexis Egea</p>
+          <p class="introduction-subtitle">Software Development - Automation - Artificial Intelligence Engineer</p>
         </div>
-        <p class="introduction-click">Click to skip typing animation</p>
+        <p class="introduction-click">Click to discover more</p>
 
+        <p class="introduction-content"></p>
+        
       </section>
     </section>
 
-    <script src="src/js/welcome.js"></script>
-    <script type="module" src="src/js/introduction.js"></script>
-    <script type="module" src="src/js/utils/eventCard.js"></script>
+    <script type="module" src="src/js/introduction/typeAnimation.js"></script>
+    <script type="module" src="src/js/utils/action/moveUpAction.js"></script>
+    <script type="module" src="src/js/utils/action/zoomAction.js"></script>
   </body>
 </html>
