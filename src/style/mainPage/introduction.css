@@ -97,6 +97,9 @@
     .introduction-content {
         font-size: 4vw;
     }
+    .introduction-click {
+      bottom: 12vh; 
+    }
 }
 
 .dezoom-animation {
