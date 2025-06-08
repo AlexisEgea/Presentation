@@ -2,22 +2,32 @@ import { zoomEffect, dezoomEffect } from '../zoom.js';
 
 // Function to handle the zoom/dezoom toggle
 export function addZoomDezoomToggle(section) {   
-    const sectionElement = document.querySelector('.' + section + '-section');
-    /* TODO: Ensure only one listener is added (optional, depends on how this function is called)
-    A robust way would be to remove previous listeners before adding a new one.
-    For simplicity here, assuming this function is called only once per section after it's ready. */
+    const sectionElement = document.querySelector('.' + section);
     if(sectionElement) {
         sectionElement.addEventListener('click', (event) => {
-            if (sectionElement.classList.contains('ready')) {
+            // For introduction section, use the original logic with ready check
+            if (section === 'introduction') {
+                if (sectionElement.classList.contains('ready')) {
+                    if (sectionElement.classList.contains('zoom')) {
+                        sectionElement.classList.remove('zoom');
+                        dezoomEffect(section);
+                        sectionElement.classList.add('dezoom');
+                    } else { 
+                        sectionElement.classList.remove('dezoom');
+                        zoomEffect(section);
+                        sectionElement.classList.add('zoom');
+                    }
+                }
+            }
+            // For all other sections, use the same logic without ready check
+            else {
                 if (sectionElement.classList.contains('zoom')) {
                     sectionElement.classList.remove('zoom');
-                    dezoomEffect(sectionElement);
+                    dezoomEffect(section);
                     sectionElement.classList.add('dezoom');
-                } 
-                // This covers both !zoom && !dezoom (initial ready state) and !zoom && dezoom (dezoomed state)
-                else { 
+                } else { 
                     sectionElement.classList.remove('dezoom');
-                    zoomEffect(sectionElement);
+                    zoomEffect(section);
                     sectionElement.classList.add('zoom');
                 }
             }
@@ -25,4 +35,14 @@ export function addZoomDezoomToggle(section) {
     }
 }
 
+addZoomDezoomToggle('presentation');
+addZoomDezoomToggle('hard-skill');
+addZoomDezoomToggle('soft-skill');
+addZoomDezoomToggle('education');
+addZoomDezoomToggle('interests');
 addZoomDezoomToggle('introduction');
+addZoomDezoomToggle('certification');
+addZoomDezoomToggle('programming');
+addZoomDezoomToggle('resume');
+addZoomDezoomToggle('work-experience');
+addZoomDezoomToggle('perso-project');
