@@ -17,5 +17,5 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  overflow: hidden;
+  overflow-x: hidden; /* Disable horizontal scrolling */
 }
