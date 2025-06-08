@@ -1,15 +1,47 @@
-.main-section {
-    height: 100vh;
-    background: rgb(255, 255, 255, 0.05);
+.main-grid {
+  background: rgba(255, 255, 255, 0.05);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  grid-template-rows: repeat(3, 1fr);
+  gap: clamp(5px, 1vw, 10px);
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-.main-section.visible {
-    opacity: 1;
-    visibility: visible;
+.c2-r1 { 
+  grid-column: 2; 
+  grid-row: 1; 
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(5px, 1vw, 10px);
 }
 
-.main-section.hidden {
-    opacity: 0;
-    visibility: hidden;
+.c1-r2 { 
+  grid-column: 1; 
+  grid-row: 2; 
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: clamp(5px, 1vw, 10px);
 }
 
+.c3-r2 { 
+  grid-column: 3; 
+  grid-row: 2; 
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(5px, 1vw, 10px);
+}
+
+.one { grid-column: 1; grid-row: 1; }
+.two { grid-row: 1; } /* Positions .two in the 1st row of .c2-r1 */
+.three { grid-row: 2; } /* Positions .three in the 2nd row of .c2-r1 */  
+.four { grid-column: 3; grid-row: 1; }
+.five     { grid-row: 1; }
+.six      { grid-row: 2; }
+.seven    { grid-row: 3; }
+.eigth    { grid-column: 2; grid-row: 2; }
+.nine     { grid-row: 1; }
+.ten      { grid-row: 2; }
+.eleven   { grid-column: 1; grid-row: 3; }
+.twelve   { grid-column: 2; grid-row: 3; }
+.thirteen { grid-column: 3; grid-row: 3; }
