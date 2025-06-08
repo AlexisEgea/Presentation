@@ -1,17 +1,5 @@
-.fullscreen-active {
-  position: fixed;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  margin: 0 !important;
-  z-index: 1000;
-  border-radius: 0 !important;
-}
-
 .box {
   position: relative;
-  transition: all 0.8s ease-in-out;
   border-radius: 20px;
   background: black;
   color: white;
@@ -21,6 +9,19 @@
   height: 100%;
   overflow: hidden;
   z-index: 1;
+  transition: all 0.8s ease-in-out;
+}
+
+.fullscreen-active {
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  z-index: 1000;
+  border-radius: 0 !important;
+  transition: all 0.8s ease-in-out;
 }
 
 .box-image {

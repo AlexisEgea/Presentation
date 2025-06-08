@@ -1,12 +1,6 @@
 .introduction {
-  position: relative;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: 20px;
-  overflow: hidden; 
-  background-color: black;
-  z-index: 0;
+  overflow: hidden !important;
 }
 
 .introduction::before {
