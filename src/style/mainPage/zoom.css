@@ -1,25 +1,47 @@
-/* Position de base pour .box */
+.fullscreen-active {
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  z-index: 1000;
+  border-radius: 0 !important;
+}
+
 .box {
-    position: relative;
-    transition: all 0.8s ease-in-out;
-    border-radius: 20px;
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-  }
-  
-  .fullscreen-active {
-    position: fixed;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    z-index: 1000;
-    border-radius: 0 !important;
-  }
+  position: relative;
+  transition: all 0.8s ease-in-out;
+  border-radius: 20px;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.box-image {
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.box-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
