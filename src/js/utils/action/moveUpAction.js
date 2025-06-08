@@ -37,7 +37,7 @@ export function addMoveUpAction(section) {
         });
     };
     // Add click listener
-    const sectionElement = document.querySelector('.' + section + '-section');
+    const sectionElement = document.querySelector('.' + section);
     if (sectionElement) {
         sectionElement.addEventListener('click', moveUpListener);
     }

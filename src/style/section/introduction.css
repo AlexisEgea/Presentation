@@ -1,16 +1,9 @@
-.introduction-section {
-  position: relative;
-  display: flex;
+.introduction {
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  border-radius: 20px;
-  overflow: hidden; 
-  background-color: black;
-  z-index: 0;
+  overflow: hidden !important;
 }
 
-.introduction-section::before {
+.introduction::before {
   content: '';
   position: absolute;
   top: 0;
@@ -23,12 +16,11 @@
   background-position: calc(100% + 50vw) center;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: fadeInBackground 1s ease-in 0.5s forwards;
+  animation: fadeIn 1s ease-in 0.5s forwards;
 
   opacity: 0;
   z-index: 0; 
 }
-
 
 .introduction-title {
   font-size: 5vw;
@@ -72,6 +64,14 @@
     z-index: 1;
 }
 
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -81,53 +81,13 @@
   }
 }
 
-@keyframes fadeInBackground {
+@keyframes fadeOut {
   from {
-    opacity: 0;
-  }
-  to {
     opacity: 1;
   }
-}
-
-@media screen and (max-width: 768px) {
-    .introduction-section::before {
-        background-position: calc(50% + 50vw) center;  
-      }
-    .introduction-content {
-        font-size: 4vw;
-    }
-    .introduction-click {
-      bottom: 12vh; 
-    }
-}
-
-.dezoom-animation {
-    transition: transform 1s ease-in-out;
-    animation: dezoom 1s ease-in-out forwards;
-}
-
-@keyframes dezoom {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0.5);
-    }
-}
-
-.zoom-animation {
-    transition: transform 1s ease-in-out;
-    animation: zoom 1s ease-in-out forwards;
-}
-
-@keyframes zoom {
-    0% {
-        transform: scale(0.5);
-    }
-    100% {
-        transform: scale(1);
-    }
+  to {
+    opacity: 0;
+  }
 }
 
 .move-up {
@@ -141,4 +101,16 @@
     100% {
         transform: translateY(-35vh);
     }
+}
+
+@media screen and (max-width: 768px) {
+  .introduction::before {
+    background-position: calc(50% + 50vw) center;  
+  }
+  .introduction-content {
+    font-size: 4vw;
+  }
+  .introduction-click {
+    bottom: 12vh; 
+  }
 }

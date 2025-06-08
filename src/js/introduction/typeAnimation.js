@@ -25,17 +25,17 @@ function typeWriter(formattedContent, cursor, speed = 50) {
     let typingInterval;
     let isTyping = true;
 
-    // Function to update the introduction-click text
-    const updateIntroductionClick = () => {
-        const welcomeClick = document.querySelector('.' + 'introduction' + '-click');
-        if (welcomeClick) {
-            welcomeClick.innerHTML = "Click to explore";
+    // Function to update the click text information
+    const updateClick = () => {
+        const clickElement = document.querySelector('.' + 'introduction' + '-click');
+        if (clickElement) {
+            clickElement.innerHTML = "Click to explore";
         }
     };
 
     // Add click event listener to skip typing
     const contentElement = cursor.parentElement;
-    const sectionElement = document.querySelector('.' + 'introduction' + '-section');
+    const sectionElement = document.querySelector('.' + 'introduction');
     
     const skipTyping = (event) => {
         if (isTyping) {
@@ -45,8 +45,8 @@ function typeWriter(formattedContent, cursor, speed = 50) {
             contentElement.innerHTML = formattedContent;
             isTyping = false;
             sectionElement.removeEventListener('click', skipTyping);
-            // Update introduction-click text when skipping
-            updateIntroductionClick();
+            // Update click information text when skipping
+            updateClick();
             if (sectionElement) {
                 sectionElement.classList.add('ready');
             }
@@ -96,8 +96,8 @@ function typeWriter(formattedContent, cursor, speed = 50) {
             // Remove cursor when typing is complete
             cursor.remove();
             isTyping = false;
-            // Update welcome-click text when typing is complete
-            updateIntroductionClick();
+            // Update click information text when typing is complete
+            updateClick();
 
             if (sectionElement) {
                 sectionElement.classList.add('ready');
@@ -129,7 +129,7 @@ export async function displayContent() {
         // Set the minimum height of the content element
         contentElement.style.minHeight = requiredHeight + 'px';
 
-        contentElement.innerHTML = ''; // Clear the content first
+        contentElement.innerHTML = '';
         
         // Create a blinking cursor element
         const cursor = document.createElement('span');
