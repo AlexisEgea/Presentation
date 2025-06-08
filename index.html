@@ -1,31 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexis Egea</title>
-    <link rel="stylesheet" href="src/style/mainPage/introduction.css">
-    <link rel="stylesheet" href="src/style/mainPage/mainPage.css">
-    <link rel="stylesheet" href="src/style/style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  </head>
-  
-  <body>
-    <section class="main-section">
-      <section class="introduction-section zoom">
-        <div>
-          <p class="introduction-title">Alexis Egea</p>
-          <p class="introduction-subtitle">Software Development - Automation - Artificial Intelligence Engineer</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alexis Egea</title>
+        <link rel="stylesheet" href="src/style/mainPage/introduction.css">
+        <link rel="stylesheet" href="src/style/mainPage/mainPage.css">
+        <link rel="stylesheet" href="src/style/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+        <link rel="stylesheet" href="src/style/mainPage/zoom.css">
+        <link rel="stylesheet" href="src/style/mainPage/link.css">
+    </head>
+    
+    <body>
+        <div class="main-grid">
+            <section class="box one presentation dezoom">
+                <div class="box-cover">
+                  <span class="box-text">Presentation</span>
+                  <img src="data/information/presentation.jpg" alt="" class="box-image">
+                </div>
+
+                <div class="box-data">
+                  <p>Presentation</p>
+                </div>
+            </section>
+            <div class="c2-r1">
+                <section class="box two hard-skill dezoom">
+                    <p>Hard Skill</p>
+                </section>
+                <section class="box three soft-skill dezoom">
+                    <p>Soft Skill</p>
+                </section>
+            </div>
+            <section class="box four education dezoom">
+                <p>Education</p>
+            </section>
+
+            <div class="c1-r2">
+                <section class="box five interests dezoom">
+                    <p>Interests</p>
+                </section>
+                <section class="box six dezoom">
+                    <a href="https://www.linkedin.com/in/alexisegea/" target="_blank" class="link">
+                        <img src="data/icon/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                </section>
+                <section class="box seven dezoom">
+                    <a href="https://github.com/alexisegea" target="_blank" class="link">
+                        <img src="data/icon/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                </section>
+            </div>
+            <section class="box eigth introduction zoom first-zoom">
+                <div>
+                    <p class="introduction-title">Alexis Egea</p>
+                    <p class="introduction-subtitle">Software Development - Automation - Artificial Intelligence Engineer</p>
+                </div>
+                <p class="introduction-content"></p>
+                <p class="introduction-click">Click to discover more</p>
+            </section> 
+            <div class="c3-r2">
+                <section class="box nine certification dezoom">
+                    <p>Certification</p>
+                </section> 
+                <section class="box ten programming dezoom">
+                    <p>Programming</p>
+                </section> 
+            </div>
+
+            <section class="box eleven resume">
+                <p>CV</p>
+            </section>
+            <section class="box twelve work-experience">
+                <p>Work Experience</p>
+            </section>
+            <section class="box thirteen perso-project">
+                <p>Personal Project</p>
+            </section>
         </div>
-        <p class="introduction-click">Click to discover more</p>
-
-        <p class="introduction-content"></p>
         
-      </section>
-    </section>
-
-    <script type="module" src="src/js/introduction/typeAnimation.js"></script>
-    <script type="module" src="src/js/utils/action/moveUpAction.js"></script>
-    <script type="module" src="src/js/utils/action/zoomAction.js"></script>
-  </body>
+        <script type="module" src="src/js/introduction/typeAnimation.js"></script>
+        <script type="module" src="src/js/utils/action/moveUpAction.js"></script>
+        <script type="module" src="src/js/utils/action/zoomAction.js"></script>
+    </body>
 </html>
