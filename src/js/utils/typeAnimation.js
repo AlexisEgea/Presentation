@@ -1,7 +1,5 @@
 import { formatContent, getContent } from './getContent.js';
 
-
-
 // Simulates typing animation for the content
 function typeWriter(sectionName, formattedContent, cursor, speed = 50) {
     let i = 0;
