@@ -1,3 +1,5 @@
+// Formats the content by replacing newlines with <br> tags and making text between 
+// dashes and colons bold
 function formatContent(content) {
     // Replace newlines with <br> tags
     let formattedContent = content.replace(/\n/g, '<br>');
@@ -8,11 +10,11 @@ function formatContent(content) {
     return formattedContent;
 }
 
+// Fetches the introduction content from the server
 async function getContent() {
     try {
         const response = await fetch('https://alexisegea.github.io/Presentation/data/introduction-content/content.txt');
         const content = await response.text();
-        // console.log(content);
         return formatContent(content);
     } catch (error) {
         console.error('Error loading content:', error);
@@ -20,6 +22,7 @@ async function getContent() {
     }
 }
 
+// Simulates typing animation for the content
 function typeWriter(formattedContent, cursor, speed = 50) {
     let i = 0;
     let typingInterval;
@@ -52,7 +55,7 @@ function typeWriter(formattedContent, cursor, speed = 50) {
             }
         }
     };
-    
+
     if (sectionElement) {
         sectionElement.addEventListener('click', skipTyping);
     }
@@ -107,9 +110,13 @@ function typeWriter(formattedContent, cursor, speed = 50) {
     typeNextChar();
 }
 
+// Displays the introduction content with typing animation
+// If the section is already 'ready', displays the content directly 
 export async function displayContent() {
     const content = await getContent();
     const contentElement = document.querySelector('.' + 'introduction' +'-content');
+    const sectionElement = document.querySelector('.' + 'introduction');
+    
     if (contentElement) {
         const formattedContent = formatContent(content);
 
@@ -118,20 +125,28 @@ export async function displayContent() {
         tempElement.style.visibility = 'hidden';
         tempElement.style.position = 'absolute';
         tempElement.style.left = '-9999px';
-        tempElement.style.width = contentElement.offsetWidth + 'px'; // Use the actual container width
+        tempElement.style.width = contentElement.offsetWidth + 'px';
         tempElement.innerHTML = formattedContent;
         document.body.appendChild(tempElement);
 
         const requiredHeight = tempElement.offsetHeight;
-
         document.body.removeChild(tempElement);
 
         // Set the minimum height of the content element
         contentElement.style.minHeight = requiredHeight + 'px';
 
+        // If the section is already 'ready', display the text directly
+        if (sectionElement && sectionElement.classList.contains('ready')) {
+            contentElement.innerHTML = formattedContent;
+            const clickElement = document.querySelector('.' + 'introduction' + '-click');
+            if (clickElement) {
+                clickElement.innerHTML = "Click to explore";
+            }
+            return;
+        }
+
+        // Otherwise, start the typing animation
         contentElement.innerHTML = '';
-        
-        // Create a blinking cursor element
         const cursor = document.createElement('span');
         cursor.className = 'typing-cursor';
         cursor.innerText = '|';
