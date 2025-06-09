@@ -1,26 +1,6 @@
-// Formats the content by replacing newlines with <br> tags and making text between 
-// dashes and colons bold
-function formatContent(content) {
-    // Replace newlines with <br> tags
-    let formattedContent = content.replace(/\n/g, '<br>');
-    
-    // Format text between dashes and colons
-    formattedContent = formattedContent.replace(/- (.*?):/g, '- <strong>$1</strong>:');
-    
-    return formattedContent;
-}
+import { formatContent, getContent } from './getContent.js';
 
-// Fetches the introduction content from the server
-async function getContent(sectionName) {
-    try {
-        const response = await fetch(`https://alexisegea.github.io/Presentation/data/content/${sectionName}.txt`);
-        const content = await response.text();
-        return formatContent(content);
-    } catch (error) {
-        console.error('Error loading content:', error);
-        return null;
-    }
-}
+
 
 // Simulates typing animation for the content
 function typeWriter(sectionName, formattedContent, cursor, speed = 50) {
@@ -112,7 +92,7 @@ function typeWriter(sectionName, formattedContent, cursor, speed = 50) {
 
 // Displays the introduction content with typing animation
 // If the section is already 'ready', displays the content directly 
-export async function displayContent(sectionName) {
+export async function displayContentWithTypingAnimation(sectionName) {
     const content = await getContent(sectionName);
     const contentElement = document.querySelector('.' + sectionName + '-content');
     const sectionElement = document.querySelector('.' + sectionName);
