@@ -1,0 +1,23 @@
+Through the theoretical knowledge I acquired during my university studies and engineering school, combined with hands-on experience gained through academic, professional, and personal projects, I have been able to learn a wide range of programming techniques and work with numerous languages and libraries.
+
+Here is a non-exhaustive list of programming paradigms I have explored:
+- Imperative Programming
+- Recursive Programming
+- Object-Oriented Programming (OOP)
+- Functional Programming
+- Concurrent Programming
+- Logical Programming
+
+In addition, thanks to my specialization in Artificial Intelligence, I have gained experience with several Machine Learning approaches:
+- Supervised Learning
+- Unsupervised Learning
+- Reinforcement Learning
+- Deep Learning
+- Transfer Learning
+
+My continuous learning mindset, versatility, and adaptability allow me to work independently of any specific programming language.
+Exploring new languages and libraries is an integral part of my daily routine and a constant driver for expanding my technical horizons.
+
+Among the many languages I have worked with, the ones I use most frequently are Python, Java, and C++.
+
+You can click on the urn below to discover some of the languages and libraries I have used throughout my projects.

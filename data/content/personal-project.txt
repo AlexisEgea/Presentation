@@ -1,0 +1,76 @@
+[Section] Excel and PDF Invoice Generator **(sold solution)**
+Automated tool for creating invoices in Excel and PDF formats from data extracted from real estate platforms. 
+The system sorts invoices based on their payment status
+
+[Section] Handwritten and Gesture Number Recognition and Prediction System
+Real-time digit classification system using two input modes: handwritten digits and hand gesture 
+recognition through live video streaming. This system leverages advanced image processing
+and machine learning techniques.
+
+[Section] Bots
+Bots coded in Java or Python using techniques such as learning protocols, machine learning,
+game theory, Bellman operations, etc. to improve decision-making capabilities in uncertain situations.
+
+[Section] Connect Four
+Implementation of a Connect Four game following the Model-View-Controller (MVC) architecture pattern, 
+featuring AI bots using Minimax and Alpha-Beta Pruning algorithms. 
+The project features five player modes: Minimax Bot, Alpha-Beta Bot, Sorted Alpha-Beta Bot 
+(tested up to depth 12 and never defeated), Random Bot, and Human Player.
+
+[Section] Quoridor
+Development of a Quoridor game with an AI bot using Q-Learning reinforcement learning algorithm. 
+The bot learns optimal strategies through exploration and exploitation of game states, 
+adapting its behavior based on rewards obtained during gameplay.
+The project features two player modes: Q-Learner Bot and Human Player.
+
+[Section] 421 Dice
+Development of a bot using Policy-based learning for the 421 dice game. 
+The bot learns optimal strategies by analyzing player experiences and computing average values for different game states. 
+Players can choose between keeping or rolling each die to achieve winning combinations. 
+The project features three player modes: Policy Bot, Random Bot, and Human Player.
+Features:
+- Q-Learning Bot that improves its performance over time
+- Random Bot for comparison
+- Visualization of learning progress
+- Customizable game parameters
+
+[Section] Chess
+During my Bachelor's degree in Mathematics and Computer Science, I collaborated with two other students to develop a chess game. 
+Coded in C++, we designed a chess game from scratch, incorporating the different pieces and the rules of the game. 
+At the end of the project, we presented a functional application with an intuitive user interface, offering multiple themes to choose from. The game allowed players to play a chess match either with another person on the same PC or against a basic artificial intelligence, able to apply learned strategies.
+
+[Section] Image Generator
+Wanting to update my LinkedIn banner with an image I own the rights to, I decided to develop a project that generates images from textual descriptions. 
+Developed in Python and using the OpenAI library, I used the "text_to_image" DALL-E 3 model to create high-quality images.
+AI models based on Large Language Models (LLMs) offer the possibility to achieve advanced results based on the instructions provided, allowing for virtual assistants able to perform various tasks. 
+This project allowed me to enhance my skills in Prompt Engineering while continuing to explore new horizons with cutting-edge AI technologies.
+Most of the images present in this document were generated from this project.
+
+[Section] Image Editor
+After completing my image generator project, I wanted to take it further by developing a project that allows to edit (Inpainting) an image and generating additional parts to extend it (Outpainting). 
+This project, developed in Python, uses ComfyUI, an advanced user interface for manipulating and customizing AI models.
+I tested several open-source AI models, including those available on Hugging Face and CivitAI, such as the well-known ones: Stable Diffusion, Flux, and Foocus. 
+ComfyUI enabled me to build, test, and customize the image generation and processing workflow, making the development and understanding of the models more flexible and intuitive.
+As a result, I was able to enhance my skills in Prompt Engineering, enabling me to design high-quality prompts and handle different types of models with ease.
+
+[Section] Artificial Intelligence System
+Developed in Python and using numerous Neural Networks and AI Models, I had the opportunity to join the AI team at Profile Software (International Software Solutions Provider for the Banking and Investment Management Industries) to contribute to the development of a conversational virtual assistant solution based on the group's software data.
+In three months, I understood a complex project, completed tasks to enhance the solution, and, with the support of the AI team, integrated this AI solution into the Profile Login software. Documentation, Communication, Training of Neural Networks and AI Models, Developing new Neural Networks, Refining and Testing Models, etc, I accomplished the entire integration.
+This internship was a highly enriching experience as it provided me with practical insights into the use of Neural Networks and AI Models in real-world scenarios and highlighted the significance of prompt engineering in such projects.
+
+[Section] Encoding/Decoding Sensitive Data
+Developed in Java, I completed a project focused on encrypting and decrypting data to self-train in cryptography concepts. 
+The goal was to master the protection of sensitive data through encryption algorithms using a unique key automatically generated by the program. This key, essential for applying the cryptographic algorithms, provides an additional layer of security by strengthening the encryption and decryption process.
+
+[Section] Modeling a City from a Point Cloud
+In my final project for my Bachelor’s Degree in Computer Science, I worked with a student to create a representation of the city of Lyon, France, in the form of a point cloud. 
+This project, developed in C++ using the CGAL (Computational Geometry Algorithms Library) and the Qt Creator and CMake tools, had for goal to process files containing several million points to reproduce cities.
+The results were the outcome of extensive analysis and testing phases, leading to promising findings. We decomposed the open data file of Lyon into more than 1,000 files, used and tested various geometric functions to achieve a suitable point cloud, rewrote some of these functions, tested on a small part of the city, and then improved the point cloud and mesh before stitching the different sections together.
+This project made me realize the importance of program complexity and the need to optimize code while considering resources and execution time.
+
+[Section] Auto Encoder
+In my recent project on communications engineering, I aimed to replicate a communication system over an Additive White Gaussian Noise (AWGN) channel, modeled as an Auto-Encoder. This project, developed using Python and TensorFlow, focused on comparing the results obtained from the Auto-Encoder with those from a traditional M-PSK (Phase-Shift Keying) system, both in constellation diagrams and linear representations. 
+The main challenge was to demonstrate that machine learning-based approaches, such as deep learning, could achieve similar or better performance than traditional methods, despite the well-established and mature nature of communication system design. 
+After extensive testing and analysis, we observed that while deep learning techniques show potential in complex scenarios, traditional methods still hold their ground in straightforward channel models like AWGN. 
+This project underscored the need for careful consideration when applying modern techniques in mature engineering fields, where the bar for performance improvements is exceptionally high.
+
