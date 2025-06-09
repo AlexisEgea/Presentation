@@ -6,7 +6,6 @@ export function addZoomDezoomToggle(section) {
     const sectionElement = document.querySelector('.' + section);
     if(sectionElement) {
         // Temporarily commented out for testing purposes
-        // Update background color when section is loaded
         // updateBoxBackground(sectionElement);
 
         sectionElement.addEventListener('click', (event) => {
@@ -14,6 +13,9 @@ export function addZoomDezoomToggle(section) {
             if (section === 'introduction') {
                 if (sectionElement.classList.contains('ready')) {
                     if (sectionElement.classList.contains('zoom')) {
+                        // Reset scroll when dezooming
+                        sectionElement.scrollTop = 0;
+
                         sectionElement.classList.remove('zoom');
                         dezoomEffect(section);
                         sectionElement.classList.add('dezoom');
@@ -27,6 +29,9 @@ export function addZoomDezoomToggle(section) {
             // For all other sections, use the same logic without ready check
             else {
                 if (sectionElement.classList.contains('zoom')) {
+                    // Reset scroll when dezooming
+                    sectionElement.scrollTop = 0;
+
                     sectionElement.classList.remove('zoom');
                     dezoomEffect(section);
                     sectionElement.classList.add('dezoom');
@@ -43,8 +48,8 @@ export function addZoomDezoomToggle(section) {
 // Apply zoom/dezoom toggle to all sections
 const sections = [
     'presentation',
-    'hard-skill',
-    'soft-skill',
+    'hard-skills',
+    'soft-skills',
     'education',
     'introduction',
     'certification',
