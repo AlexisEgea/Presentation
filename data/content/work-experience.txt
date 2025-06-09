@@ -1,0 +1,32 @@
+**Software Development Engineer (Apprenticeship)**
+*Profile Login*
+[Section] Paris, France, 2022–2025
+- **Artificial Intelligence**: 
+Development of a data processing service for an AI project using a text-to-SQL model.
+The project enables automatic generation and display of complex SQL queries from natural language questions asked by users.
+Complete automation of metadata collection and enrichment process (definitions, types, relationships)
+Optimization of information content sent to the model based on the question using advanced techniques (embeddings, weighting, fine token selection)
+- **Automation**: 
+Design from scratch and maintenance of an automated testing platform using Robot Framework (Python) through scripts replicating human behavior to validate treasury management software.
+Understanding requirements, implementing automated solutions, conducting tests, validating results, and documenting issues through Jira ticket creation.
+
+**Artificial Intelligence Development Engineer (Internship)**
+*Profile Software*
+[Section] Athens, Greece, July–September 2024
+Complete integration of an artificial intelligence project into treasury management software.
+The project enables automatic generation and display of complex SQL queries from natural language questions asked by users.
+Development and optimization of language models (LLMs) to maximize system performance. Design and implementation of instruction prompts and structured metadata for AI model training, leveraging in-depth analysis of software database schemas and relationships.
+
+**Research Intern in Computer Science**
+*CNRS x Oracle*
+[Section] Lyon, France, May–June 2022
+Development and testing of advanced graph accessibility and optimization techniques in Java.
+Design and implementation of indexing strategies and advanced stopping rule mechanisms to significantly improve graph processing efficiency.
+
+
+
+
+
+
+
+
