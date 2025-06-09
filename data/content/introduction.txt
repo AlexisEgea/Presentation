@@ -2,7 +2,7 @@ Welcome to my website!
 
 This site is structured into several sections that will allow you to discover my profile, background, and personal and professional projects.
 
-Simply click on the section to see its content.
+Simply click on the section to see its content and click again to go back to the home menu.
 
 Feel free to explore the different sections to discover their content.
 
