@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="src/style/mainPage/mainPage.css">
         <link rel="stylesheet" href="src/style/section/common.css">
         <link rel="stylesheet" href="src/style/section/introduction.css">
+        <link rel="stylesheet" href="src/style/section/programming.css">
         <link rel="stylesheet" href="src/style/mainPage/zoom.css">
         <link rel="stylesheet" href="src/style/mainPage/link.css">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -107,7 +108,10 @@
                     </div>
                     <div class="box-data">
                      <p class="title">Programming</p>
-                     <p class="content">test</p>
+                     <p class="content"></p>
+                     <div class="matter-container">
+                        <canvas class="matter-canvas"></canvas>
+                    </div>
                     </div>
                 </section> 
             </div>
@@ -148,11 +152,11 @@
                 </div>
             </section>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
         <script type="module" src="src/js/utils/initialisation.js"></script>
-        <!-- <script type="module" src="src/js/utils/fall.js"></script> -->
         <script type="module" src="src/js/utils/typeAnimation.js"></script>
         <script type="module" src="src/js/utils/action/moveUpAction.js"></script>
         <script type="module" src="src/js/utils/action/zoomAction.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+        <script type="module" src="src/js/utils/fall.js"></script>
     </body>
 </html>
