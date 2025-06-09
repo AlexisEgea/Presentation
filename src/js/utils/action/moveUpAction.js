@@ -1,4 +1,4 @@
-import { displayContent } from '../../introduction/typeAnimation.js';
+import { displayContent } from '../typeAnimation.js';
 
 export function addMoveUpAction(section) {
     const elements = ['title', 'subtitle'].map(type => 
@@ -20,7 +20,7 @@ export function addMoveUpAction(section) {
             });
             let content = document.querySelector(".introduction-content");
             content.style.position = "absolute";
-            displayContent();
+            displayContent(section);
             return;
         }
         
@@ -46,7 +46,7 @@ export function addMoveUpAction(section) {
                     clickElement.innerText = "Click to skip typing animation";
                     let content = document.querySelector(".introduction-content");
                     content.style.position = "absolute";
-                    displayContent();
+                    displayContent(section);
                 }, { once: true }); // Remove listener after first trigger
             }
         });
