@@ -1,0 +1,15 @@
+Throughout my academic path and professional projects, I have built a solid foundation of technical skills that enable me to design and deliver high-quality software solutions:
+
+- **Programming**: Mastery of Algorithms and Development in different Programming Languages, including Java, Python, and C++
+- **Machine Learning/Deep Learning**: Knowledges of Data Generation, Model Training and Testing, and Neural Network Development
+- **Prompt Engineering**: Optimization of Prompts for Large Language Models (LLMs) and Generative AI Applications
+- **Software Architecture**: Designing reliable, modular, and maintainable architectures for scalable applications
+- **Full-Stack Development**: **Backend** functionalities, **Frontend** design, and effective **Communication** between Backend and Frontend components
+- **Automation**: Developing tools and processes to automate tasks and simulate Complex or Human-Like Behaviors
+- **Containerization and Deployment**: Experience with Docker and Deployment of Software Solutions in Various Environments
+- **Version Control and Collaboration**: Advanced use of GitHub, Collaborative Workflows, and CI/CD Principles
+- **Virtual Environments**: Proficiency with Venv, Conda, and Environment Management for Reproducible Development Setups
+- **IDE Proficiency**: Advanced Usage of Tools such as Cursor, Windsurf, VS Code, and JetBrains IDEs
+- **AI Tools**: Experience with GPT, Grok, Claude-Sonnet, Hugging Face, Comfy UI, etc
+- **Operating Systems**: Working comfortably across Linux (Ubuntu), Windows, and MacOS environments
+

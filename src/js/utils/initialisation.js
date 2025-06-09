@@ -1,5 +1,6 @@
 function initContent(sectionName) {
     const section = document.querySelector('.' + sectionName);
+    section.scrollTop = 0;
 
     if (section) {
         const isZoom = section.classList.contains('zoom');
@@ -24,8 +25,8 @@ function initContent(sectionName) {
 
 const sections = [
     'presentation',
-    'hard-skill',
-    'soft-skill',
+    'hard-skills',
+    'soft-skills',
     'education',
     'introduction',
     'certification',

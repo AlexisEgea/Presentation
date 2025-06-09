@@ -1,0 +1,58 @@
+[Section] About Me
+My name is Alexis Egea, and I will graduate in **Computer Science Engineering** in September 2025.
+
+I chose to become an engineer because I have always been passionate about imagining the world of tomorrow.  
+Driven by a strong sense of creativity, I strive to design solutions that make everyday life simpler, more seamless, and more efficient.
+
+Solving complex problems is a true driving force for me.  
+It constantly pushes me to go beyond my limits and explore new horizons.  
+With the emergence of breakthrough technologies like Artificial Intelligence, this dynamic has accelerated dramatically, opening up unprecedented opportunities for innovation.
+
+Computer science allows me to bring my ideas to life: I can imagine, visualize, and develop concrete solutions by implementing the features I envision.  
+Every mission, project, and challenge becomes a source of inspiration for future endeavors, helping me to continuously grow.
+
+Imagining, designing, and developing such solutions is what motivates me daily.  
+I draw inspiration from many areas: everyday life, online information, cinema, TV series, and particularly video games with complex and immersive mechanics.
+
+[Section] Focus in Software Development
+I believe that software development is not only about writing code, but about creating a project that lives and evolves, a solution that delivers real value to its users.
+
+I aim to design software that fully meets the client’s specifications and business needs, while ensuring a reliable, well-documented, and well-organized architecture.  
+I also focus on writing modular, maintainable, and easily interchangeable code, and strive to deliver optimal performance and efficiency.
+
+[Section] Focus Areas in Artificial Intelligence
+I have a strong interest in AI and specialize in three particular areas:
+1. **Generative AI**: Data Generation, Large Language Models (LLMs), and Prompt Engineering.
+2. **Combinatorial AI**: Development of intelligent bots for video games, strategic decision-making, pathfinding, adaptive behaviors in dynamic environments.
+3. **AI for Autonomous Vehicles**: Designing real-time decision-making algorithms for complex and dynamic environments.
+
+[Section] Technical Skills
+thanks to the excellent courses I have followed, I have built a solid foundation in Computer Science, particularly in Programming.
+
+This mastery of algorithms allows me to be independent of any specific programming language and adapt easily to different contexts and environments.  
+I have worked with more than 10 programming languages, with the main ones being **Java**, **Python**, and **C++**.
+
+Where I have improved the most is in my ability to:  
+- Conduct effective research  
+- Document myself autonomously  
+- Adapt quickly to new tools and technologies  
+- Continuously progress, day after day
+
+My philosophy is to explore ever broader horizons, push beyond the limits of what is possible, and deliver innovative solutions to complex problems.
+
+[Section] Contact
+If my profile has caught your interest and you would like to discuss any opportunities, feel free to contact me:
+You can click on:
+- **Mail section**: alexisegea@outlook.com 
+- **LinkedIn section**: https://www.linkedin.com/in/alexisegea/ 
+to get in touch.
+
+Thank you for taking the time to read this section.  
+
+**Alexis EGEA**
+
+
+
+
+
+
