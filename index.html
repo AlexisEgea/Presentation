@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
         <link rel="stylesheet" href="src/style/mainPage/zoom.css">
         <link rel="stylesheet" href="src/style/mainPage/link.css">
+        <link rel="stylesheet" href="src/style/section/programming.css">
     </head>
     
     <body>
@@ -19,26 +20,46 @@
                   <span class="box-text">Presentation</span>
                   <img src="data/information/presentation.jpg" alt="" class="box-image">
                 </div>
-
                 <div class="box-data">
                   <p>Presentation</p>
                 </div>
             </section>
+
             <div class="c2-r1">
-                <section class="box two hard-skill dezoom">
-                    <p>Hard Skill</p>
+                <section class="box two soft-skill dezoom">
+                    <div class="box-cover">
+                        <span class="box-text">Soft Skills</span>
+                        <img src="data/information/soft-skills.png" alt="" class="box-image">
+                    </div>
+                    <div class="box-data">
+                        <p>Soft Skills</p>
+                    </div>
                 </section>
-                <section class="box three soft-skill dezoom">
-                    <p>Soft Skill</p>
+                <section class="box three hard-skill dezoom">
+                    <div class="box-cover">
+                        <span class="box-text">Hard Skills</span>
+                        <img src="data/information/hard-skills.png" alt="" class="box-image">
+                    </div>
+                    <div class="box-data">
+                        <p>Hard Skills</p>
+                    </div>
                 </section>
             </div>
             <section class="box four education dezoom">
-                <p>Education</p>
+                <div class="box-cover">
+                    <span class="box-text">Education</span>
+                    <img src="data/information/formation.png" alt="" class="box-image">
+                </div>
+                <div class="box-data">
+                    <p>Education</p>
+                </div>
             </section>
 
             <div class="c1-r2">
-                <section class="box five interests dezoom">
-                    <p>Interests</p>
+                <section class="box five dezoom">
+                    <a href="mailto:alexisegea@outlook.com" class="link">
+                        <img src="data/icon/mail.png" alt="Email" class="social-icon">
+                    </a>
                 </section>
                 <section class="box six dezoom">
                     <a href="https://www.linkedin.com/in/alexisegea/" target="_blank" class="link">
@@ -52,33 +73,73 @@
                 </section>
             </div>
             <section class="box eigth introduction zoom fullscreen-active">
-                <div>
+                <div class="box-data">
                     <p class="introduction-title">Alexis Egea</p>
                     <p class="introduction-subtitle">Software Development - Automation - Artificial Intelligence Engineer</p>
+                    <p class="introduction-content"></p>
+                    <p class="introduction-click">Click to discover more</p>
                 </div>
-                <p class="introduction-content"></p>
-                <p class="introduction-click">Click to discover more</p>
+                <div class="box-cover">
+                    <span class="box-text">Introduction</span>
+                    <img src="data/information/introduction.png" alt="" class="box-image">
+                </div>
             </section> 
             <div class="c3-r2">
                 <section class="box nine certification dezoom">
-                    <p>Certification</p>
+                    <div class="box-cover">
+                        <span class="box-text">Certification</span>
+                        <img src="data/information/certification.png" alt="" class="box-image">
+                    </div>
+                    <div class="box-data">
+                        <p>Certification</p>
+                    </div>
                 </section> 
                 <section class="box ten programming dezoom">
-                    <p>Programming</p>
+                    <div class="box-cover">
+                        <span class="box-text">Programming</span>
+                        <img src="data/information/programming.png" alt="" class="box-image">
+                    </div>
+                    <div class="box-data">
+                     <p class="programming-title">Programming</p>
+                     <p class="programming-content"> text</p>
+                     <!-- <div class="matter-container">
+                        <canvas class="matter-canvas"></canvas>
+                    </div> -->
+                    </div>
                 </section> 
             </div>
 
-            <section class="box eleven resume">
-                <p>CV</p>
+            <section class="box eleven resume dezoom">
+                <div class="box-cover">
+                    <span class="box-text">Resume</span>
+                    <img src="data/information/resume.png" alt="" class="box-image">
+                </div>
+                <div class="box-data">
+                    <p>Resume</p>
+                </div>
             </section>
-            <section class="box twelve work-experience">
-                <p>Work Experience</p>
+            <section class="box twelve work-experience dezoom">
+                <div class="box-cover">
+                    <span class="box-text">Work Experience</span>
+                    <img src="data/information/work-experience.png" alt="" class="box-image">
+                </div>
+                <div class="box-data">
+                    <p>Work Experience</p>
+                </div>
             </section>
-            <section class="box thirteen perso-project">
+            <section class="box thirteen personal-project dezoom">
+                <div class="box-cover">
+                    <span class="box-text">Personal Project</span>
+                    <img src="data/information/personal-project.png" alt="" class="box-image">
+                </div>
+                <div class="box-data">
                 <p>Personal Project</p>
+                </div>
             </section>
         </div>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+        <script type="module" src="src/js/utils/initialisation.js"></script>
+        <script type="module" src="src/js/utils/fall.js"></script>
         <script type="module" src="src/js/introduction/typeAnimation.js"></script>
         <script type="module" src="src/js/utils/action/moveUpAction.js"></script>
         <script type="module" src="src/js/utils/action/zoomAction.js"></script>

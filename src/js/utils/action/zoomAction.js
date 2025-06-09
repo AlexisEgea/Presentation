@@ -1,9 +1,14 @@
 import { zoomEffect, dezoomEffect } from '../zoom.js';
+import { updateBoxBackground } from '../colorBackground.js';
 
 // Function to handle the zoom/dezoom toggle
 export function addZoomDezoomToggle(section) {   
     const sectionElement = document.querySelector('.' + section);
     if(sectionElement) {
+        // Temporarily commented out for testing purposes
+        // Update background color when section is loaded
+        // updateBoxBackground(sectionElement);
+
         sectionElement.addEventListener('click', (event) => {
             // For introduction section, use the original logic with ready check
             if (section === 'introduction') {
@@ -35,14 +40,18 @@ export function addZoomDezoomToggle(section) {
     }
 }
 
-addZoomDezoomToggle('presentation');
-addZoomDezoomToggle('hard-skill');
-addZoomDezoomToggle('soft-skill');
-addZoomDezoomToggle('education');
-addZoomDezoomToggle('interests');
-addZoomDezoomToggle('introduction');
-addZoomDezoomToggle('certification');
-addZoomDezoomToggle('programming');
-addZoomDezoomToggle('resume');
-addZoomDezoomToggle('work-experience');
-addZoomDezoomToggle('perso-project');
+// Apply zoom/dezoom toggle to all sections
+const sections = [
+    'presentation',
+    'hard-skill',
+    'soft-skill',
+    'education',
+    'introduction',
+    'certification',
+    'programming',
+    'resume',
+    'work-experience',
+    'personal-project'
+];
+
+sections.forEach(sectionName => addZoomDezoomToggle(sectionName));

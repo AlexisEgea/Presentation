@@ -6,8 +6,23 @@ export function addMoveUpAction(section) {
     );
     
     const moveUpListener = (event) => {
-        // Stop the click event from propagating to the parent
+        // Prevent click event from propagating to parent
         event.stopPropagation();
+        
+        // TODO: Upgrade this section for content, it doesn't fix the position of content
+        const sectionElement = document.querySelector('.' + section);
+        // If section is already 'ready', place elements directly at the top
+        if (sectionElement && sectionElement.classList.contains('ready')) {
+            elements.forEach(element => {
+                if (element) {
+                    element.style.transform = 'translateY(-35vh)';
+                }
+            });
+            let content = document.querySelector(".introduction-content");
+            content.style.position = "absolute";
+            displayContent();
+            return;
+        }
         
         // Add move-up class to all elements
         elements.forEach(element => {
@@ -16,7 +31,7 @@ export function addMoveUpAction(section) {
             }
         });
         
-        // Remove the event listener from all elements after first click
+        // Remove event listener from all elements after first click
         elements.forEach(element => {
             if (element) {
                 element.removeEventListener('click', moveUpListener);
@@ -24,7 +39,7 @@ export function addMoveUpAction(section) {
         });
 
         const clickElement = document.querySelector('.' + section + '-click');
-        // Wait for the move-up animation to complete using animationend event
+        // Wait for move-up animation to complete using animationend event
         elements.forEach(element => {
             if (element) {
                 element.addEventListener('animationend', () => {

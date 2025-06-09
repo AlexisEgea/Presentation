@@ -15,74 +15,53 @@ export function zoomEffect(section) {
     // Appliquer le style fullscreen via classe
     element.classList.add('fullscreen-active');
 
-    // TODO: will be updated when introduction tag will change
-    if (section == 'introduction') {
-        const suffixes = ['-title', '-subtitle', '-click', '-content'];
-        suffixes.forEach(suffix => {
-            const element = document.querySelector('.' + section + suffix);
-            if (element) {
-                if (element.classList.contains('fade-out')) {
-                    element.classList.remove('fade-out');
-                }
-                element.classList.add('fade-in');
-            }
-        });
-    } else {
-        // Remove box-cover
-        const boxCoverElement = document.querySelector("." + section + " .box-cover");
-        if (boxCoverElement) {
-            if (boxCoverElement.classList.contains('fade-in')) {
-                boxCoverElement.classList.remove('fade-in');
-            }
-            boxCoverElement.classList.add('fade-out');
+    // Remove box-cover
+    const boxCoverElement = document.querySelector("." + section + " .box-cover");
+    if (boxCoverElement) {
+        if (boxCoverElement.classList.contains('fade-in')) {
+            boxCoverElement.classList.remove('fade-in');
         }
-        // Add box-data
-        const boxDataElement = document.querySelector("." + section + " .box-data");
-        if (boxDataElement) {
-            if (boxDataElement.classList.contains('fade-out')) {
-                boxDataElement.classList.remove('fade-out');
-            }
-            boxDataElement.classList.add('fade-in');
+        boxCoverElement.classList.add('fade-out');
+    }
+    // Add box-data
+    const boxDataElement = document.querySelector("." + section + " .box-data");
+    if (boxDataElement) {
+        if (boxDataElement.classList.contains('fade-out')) {
+            boxDataElement.classList.remove('fade-out');
         }
+        boxDataElement.classList.add('fade-in');
     }
 }
 
 export function dezoomEffect(section) {
     const element = document.querySelector('.' + section);
+    // Sauvegarder la couleur de fond actuelle
+    const backgroundColor = element.style.backgroundColor;
+    
     element.classList.remove('fullscreen-active');
-
+    
     element.addEventListener('transitionend', () => {
+        // Réinitialiser tous les styles sauf la couleur de fond
         element.style = '';
+        // Réappliquer la couleur de fond
+        element.style.backgroundColor = backgroundColor;
     }, { once: true });
-
-    // TODO: will be updated when introduction tag will change
-    if (section == 'introduction') {
-        const suffixes = ['-title', '-subtitle', '-click', '-content'];
-        suffixes.forEach(suffix => {
-            const element = document.querySelector('.' + section + suffix);
-            if (element) {
-                if (element.classList.contains('fade-in')) {
-                    element.classList.remove('fade-in');
-                }
-                element.classList.add('fade-out');
-            }
-        });
-    } else {
-        // Add box-cover
-        const boxCoverElement = document.querySelector("." + section + " .box-cover");
-        if (boxCoverElement) {
-            if (boxCoverElement.classList.contains('fade-out')) {
-                boxCoverElement.classList.remove('fade-out');
-            }
-            boxCoverElement.classList.add('fade-in');
+    
+    // Add box-cover
+    const boxCoverElement = document.querySelector("." + section + " .box-cover");
+    console.log(boxCoverElement);
+    if (boxCoverElement) {
+        if (boxCoverElement.classList.contains('fade-out')) {
+            boxCoverElement.classList.remove('fade-out');
         }
-        // remove box-data
-        const boxDataElement = document.querySelector("." + section + " .box-data");
-        if (boxDataElement) {
-            if (boxDataElement.classList.contains('fade-in')) {
-                boxDataElement.classList.remove('fade-in');
-            }
-            boxDataElement.classList.add('fade-out');
+        boxCoverElement.classList.add('fade-in');
+    }
+    // remove box-data
+    const boxDataElement = document.querySelector("." + section + " .box-data");
+    if (boxDataElement) {
+        if (boxDataElement.classList.contains('fade-in')) {
+            boxDataElement.classList.remove('fade-in');
         }
+        boxDataElement.classList.add('fade-out');
     }
 }
