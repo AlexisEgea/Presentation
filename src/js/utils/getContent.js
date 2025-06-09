@@ -19,8 +19,9 @@ export function formatContent(content) {
 // Fetches the introduction content from the server
 export async function getContent(sectionName) {
     try {
-        // const response = await fetch(`https://alexisegea.github.io/Presentation/data/content/${sectionName}.txt`);
-        const response = await fetch(`data/content/${sectionName}.txt`);
+        const response = await fetch(`https://alexisegea.github.io/Presentation/data/content/${sectionName}.txt`);
+        // For local testing
+        // const response = await fetch(`data/content/${sectionName}.txt`);
         const content = await response.text();
         return formatContent(content);
     } catch (error) {
