@@ -22,11 +22,3 @@ Development and optimization of language models (LLMs) to maximize system perfor
 [Section] Lyon, France, May–June 2022
 Development and testing of advanced graph accessibility and optimization techniques in Java.
 Design and implementation of indexing strategies and advanced stopping rule mechanisms to significantly improve graph processing efficiency.
-
-
-
-
-
-
-
-
