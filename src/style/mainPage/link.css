@@ -17,3 +17,11 @@
 .social-icon:hover {
     transform: scale(1.1);
 }
+
+.education .content {
+    text-align: center;
+}
+
+.certification .content {
+    text-align: center;
+}
