@@ -111,6 +111,7 @@ function loadImageToBase64(imgSrc, callback) {
 
 // Handle clicks on the programming section
 document.querySelector('.matter-container').addEventListener('click', (event) => {
+    console.log("testtts");
     event.stopPropagation();
 
     clearBalls();
