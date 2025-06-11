@@ -3,7 +3,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);  
   grid-template-rows: repeat(3, 1fr);
-  gap: clamp(5px, 1vw, 10px);
+  gap: clamp(5px, 1vw, 5px);
+  margin: 5px;
+  /* height: 99vh; could be a solution to prevent grid offset */
   height: 100vh;
 }
 

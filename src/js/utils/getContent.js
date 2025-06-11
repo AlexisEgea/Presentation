@@ -19,10 +19,11 @@ export function formatContent(content) {
 // Fetches the introduction content from the server
 export async function getContent(sectionName) {
     try {
-        const response = await fetch(`https://alexisegea.github.io/Presentation/data/content/${sectionName}.txt`);
+        // const response = await fetch(`https://alexisegea.github.io/Presentation/data/content/${sectionName}.txt`);
         // For local testing
-        // const response = await fetch(`data/content/${sectionName}.txt`);
+        const response = await fetch(`data/content/${sectionName}.txt`);
         const content = await response.text();
+        // console.log(content);
         return formatContent(content);
     } catch (error) {
         console.error('Error loading content:', error);
@@ -30,21 +31,10 @@ export async function getContent(sectionName) {
     }
 }
 
-async function displayContent(sectionName){
+export async function displayContent(sectionName){
     const content = await getContent(sectionName);
     const formattedContent = formatContent(content); 
     // console.log(content);
     const element = document.querySelector('.' + sectionName + ' .content');
     element.innerHTML = formattedContent; 
 }
-
-
-displayContent("presentation");
-displayContent("soft-skills");
-displayContent("hard-skills");
-displayContent("education");
-displayContent("certification");
-displayContent("work-experience");
-displayContent("resume");
-displayContent("programming");
-displayContent("personal-project");

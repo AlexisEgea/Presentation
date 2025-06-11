@@ -1,26 +1,9 @@
-.matter-container {
-    width: 20vw;
-    height: 35vh;
-    margin-top: 140vh;
-  
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
+.matter-container {    
     background-color: white;
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 0 0 50px 50px;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(124, 123, 123, 0.1);
-}
-
-@media screen and (max-width: 768px) {
-    .matter-container {
-        width: 70vw;
-        height: 40vh;
-        margin-top: 45vh;
-    }
 }
 
 .matter-canvas {

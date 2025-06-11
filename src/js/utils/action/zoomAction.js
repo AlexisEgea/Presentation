@@ -1,62 +1,31 @@
-import { zoomEffect, dezoomEffect } from '../zoom.js';
-import { updateBoxBackground } from '../colorBackground.js';
+import { zoomIn } from '../zoom.js';
 
-// Function to handle the zoom/dezoom toggle
-export function addZoomDezoomToggle(section) {   
-    const sectionElement = document.querySelector('.' + section);
-    if(sectionElement) {
-        // Temporarily commented out for testing purposes
-        // updateBoxBackground(sectionElement);
+// Function to initialize zoom on all boxes
+function initZoom() {
+    const boxes = document.querySelectorAll('.box');
 
-        sectionElement.addEventListener('click', (event) => {
-            // For introduction section, use the original logic with ready check
-            if (section === 'introduction') {
-                if (sectionElement.classList.contains('ready')) {
-                    if (sectionElement.classList.contains('zoom')) {
-                        // Reset scroll when dezooming
-                        sectionElement.scrollTop = 0;
+    boxes.forEach(box => {
+        if (box.classList.contains('no-zoom')) {
+            return; 
+        }
 
-                        sectionElement.classList.remove('zoom');
-                        dezoomEffect(section);
-                        sectionElement.classList.add('dezoom');
-                    } else { 
-                        sectionElement.classList.remove('dezoom');
-                        zoomEffect(section);
-                        sectionElement.classList.add('zoom');
-                    }
-                }
-            }
-            // For all other sections, use the same logic without ready check
-            else {
-                if (sectionElement.classList.contains('zoom')) {
-                    // Reset scroll when dezooming
-                    sectionElement.scrollTop = 0;
+        box.addEventListener('click', () => {
+            const classList = Array.from(box.classList);
 
-                    sectionElement.classList.remove('zoom');
-                    dezoomEffect(section);
-                    sectionElement.classList.add('dezoom');
-                } else { 
-                    sectionElement.classList.remove('dezoom');
-                    zoomEffect(section);
-                    sectionElement.classList.add('zoom');
-                }
+            const sectionClass = classList.find(cls => 
+                !['box', 'dezoom', 'zoom', 'fullscreen-active'].includes(cls)
+            );
+
+            if (sectionClass) {
+                zoomIn(sectionClass);
+            } else {
+                console.warn('Unable to find a valid section for zoom:', box);
             }
         });
-    }
+    });
 }
 
-// Apply zoom/dezoom toggle to all sections
-const sections = [
-    'presentation',
-    'hard-skills',
-    'soft-skills',
-    'education',
-    'introduction',
-    'certification',
-    'programming',
-    'resume',
-    'work-experience',
-    'personal-project'
-];
-
-sections.forEach(sectionName => addZoomDezoomToggle(sectionName));
+// Wait for DOM to be fully loaded before initializing zoom
+document.addEventListener('DOMContentLoaded', () => {
+    initZoom();
+});

@@ -1,4 +1,9 @@
+import { zoomIn } from './zoom.js';
+import { displayContent } from './getContent.js';
+
 function initContent(sectionName) {
+    displayContent(sectionName);
+    
     const section = document.querySelector('.' + sectionName);
     section.scrollTop = 0;
 

@@ -18,26 +18,10 @@
     transform: scale(1.1);
 }
 
-.cv-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60vh;   
-  }
-  
-  @media screen and (max-width: 768px) {
-    .cv-box {
-      margin-top: 30vh;
-    }
-  }
-  
-  .cv-box a {
-    display: inline-block;
-  }
-  
-  .cv-image {
-    width: 200px;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
+.education .content {
+    text-align: center;
+}
+
+.certification .content {
+    text-align: center;
+}
