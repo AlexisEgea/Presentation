@@ -1,67 +1,75 @@
-export function zoomEffect(section) {
-    const element = document.querySelector('.' + section);
-    const rect = element.getBoundingClientRect();
+export function zoomIn(sectionClass) {
+    const box = document.querySelector(`.box.${sectionClass}`);
 
-    element.style.position = 'fixed';
-    element.style.top = rect.top + 'px';
-    element.style.left = rect.left + 'px';
-    element.style.width = rect.width + 'px';
-    element.style.height = rect.height + 'px';
-    element.style.zIndex = 999;
-
-    // Force reflow to allow transition
-    element.offsetHeight;
-
-    // Appliquer le style fullscreen via classe
-    element.classList.add('fullscreen-active');
-
-    // Remove box-cover
-    const boxCoverElement = document.querySelector("." + section + " .box-cover");
+    // Handle fade transitions for box-cover/box-data (Zoom In)
+    const boxCoverElement = document.querySelector(`.${sectionClass} .box-cover`);
     if (boxCoverElement) {
-        if (boxCoverElement.classList.contains('fade-in')) {
-            boxCoverElement.classList.remove('fade-in');
-        }
+        boxCoverElement.classList.remove('fade-in');
         boxCoverElement.classList.add('fade-out');
     }
-    // Add box-data
-    const boxDataElement = document.querySelector("." + section + " .box-data");
+
+    const boxDataElement = document.querySelector(`.${sectionClass} .box-data`);
     if (boxDataElement) {
-        if (boxDataElement.classList.contains('fade-out')) {
-            boxDataElement.classList.remove('fade-out');
-        }
+        boxDataElement.classList.remove('fade-out');
         boxDataElement.classList.add('fade-in');
     }
+
+    // Get current dimensions and position of the box
+    const boxRect = box.getBoundingClientRect();
+    // Clone the box
+    const clone = box.cloneNode(true);
+    clone.classList.add('zoom-clone');
+    clone.style.position = 'fixed';
+    clone.style.top = `${boxRect.top}px`;
+    clone.style.left = `${boxRect.left}px`;
+    clone.style.width = `${boxRect.width}px`;
+    clone.style.height = `${boxRect.height}px`;
+    clone.style.margin = '0';
+    clone.style.transform = 'scale(1)';
+    clone.style.transformOrigin = 'center center';
+    clone.style.transition = 'transform 0.8s ease-in-out, top 0.8s ease-in-out, left 0.8s ease-in-out, width 0.8s ease-in-out, height 0.8s ease-in-out';
+    clone.style.zIndex = '1000';
+    // Add clone to DOM
+    document.body.appendChild(clone);
+    // Force reflow to ensure browser registers initial state
+    clone.offsetHeight;
+    // Animate to fullscreen
+    clone.style.top = '0';
+    clone.style.left = '0';
+    clone.style.width = '100vw';
+    clone.style.height = '100vh';
+    clone.style.transform = 'scale(1)';
+
+    // Add click handler to trigger zoomOut
+    clone.addEventListener('click', () => {
+        zoomOut(clone, boxRect, sectionClass);
+    });
 }
 
-export function dezoomEffect(section) {
-    const element = document.querySelector('.' + section);
-    // Sauvegarder la couleur de fond actuelle
-    const backgroundColor = element.style.backgroundColor;
-    
-    element.classList.remove('fullscreen-active');
-    
-    element.addEventListener('transitionend', () => {
-        // Réinitialiser tous les styles sauf la couleur de fond
-        element.style = '';
-        // Réappliquer la couleur de fond
-        element.style.backgroundColor = backgroundColor;
-    }, { once: true });
-    
-    // Add box-cover
-    const boxCoverElement = document.querySelector("." + section + " .box-cover");
-    console.log(boxCoverElement);
+function zoomOut(clone, originalRect, sectionClass) {
+    // Animate back to original position/size
+    clone.style.top = `${originalRect.top}px`;
+    clone.style.left = `${originalRect.left}px`;
+    clone.style.width = `${originalRect.width}px`;
+    clone.style.height = `${originalRect.height}px`;
+    clone.style.transform = 'scale(1)';
+
+    // Handle fade transitions for box-cover/box-data (Zoom Out)
+    const boxCoverElement = document.querySelector(`.${sectionClass} .box-cover`);
     if (boxCoverElement) {
-        if (boxCoverElement.classList.contains('fade-out')) {
-            boxCoverElement.classList.remove('fade-out');
-        }
+        boxCoverElement.classList.remove('fade-out');
         boxCoverElement.classList.add('fade-in');
     }
-    // remove box-data
-    const boxDataElement = document.querySelector("." + section + " .box-data");
+
+    const boxDataElement = document.querySelector(`.${sectionClass} .box-data`);
     if (boxDataElement) {
-        if (boxDataElement.classList.contains('fade-in')) {
-            boxDataElement.classList.remove('fade-in');
-        }
+        boxDataElement.classList.remove('fade-in');
         boxDataElement.classList.add('fade-out');
     }
+
+    // Remove clone after animation completes
+    clone.addEventListener('transitionend', function handler() {
+        clone.remove();
+        clone.removeEventListener('transitionend', handler);
+    });
 }
