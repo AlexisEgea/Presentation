@@ -19,6 +19,3 @@ My continuous learning mindset, versatility, and adaptability allow me to work i
 Exploring new languages and libraries is an integral part of my daily routine and a constant driver for expanding my technical horizons.
 
 Among the many languages I have worked with, the ones I use most frequently are Python, Java, and C++.
-
-You can click on the urn below to discover some of the languages and libraries I have used throughout my projects:
-

@@ -12,7 +12,7 @@ Computer science allows me to bring my ideas to life: I can imagine, visualize, 
 Every mission, project, and challenge becomes a source of inspiration for future endeavors, helping me to continuously grow.
 
 Imagining, designing, and developing such solutions is what motivates me daily.  
-I draw inspiration from many areas: everyday life, online information, cinema, TV series, and particularly video games with complex and immersive mechanics.
+I draw inspiration from many areas: everyday life, online information, cinema, series, and video games with complex and immersive mechanics.
 
 [Section] Focus in Software Development
 I believe that software development is not only about writing code, but about creating a project that lives and evolves, a solution that delivers real value to its users.
@@ -23,7 +23,7 @@ I also focus on writing modular, maintainable, and easily interchangeable code, 
 [Section] Focus Areas in Artificial Intelligence
 I have a strong interest in AI and specialize in three particular areas:
 1. **Generative AI**: Data Generation, Large Language Models (LLMs), and Prompt Engineering.
-2. **Combinatorial AI**: Development of intelligent bots for video games, strategic decision-making, pathfinding, adaptive behaviors in dynamic environments.
+2. **Combinatorial AI**: Development of Intelligent Bots for video games, strategic decision-making, pathfinding, adaptive behaviors in dynamic environments.
 3. **AI for Autonomous Vehicles**: Designing real-time decision-making algorithms for complex and dynamic environments.
 
 [Section] Technical Skills

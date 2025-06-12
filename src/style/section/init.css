@@ -1,0 +1,68 @@
+.init {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden !important;
+
+  background-image: url("../../../data/background/background.png");
+  background-position: calc(100% + 50vw) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: fadeIn ease-in 0.5s forwards;
+}
+
+.init-title {
+  font-size: 5vw;
+  font-weight: 300;
+ 
+}
+
+.init-subtitle {
+  font-size: 3vw;
+  font-weight: 300;
+}
+
+.init-click {
+  position: absolute;
+  font-size: 3vw;
+
+  bottom: 0;
+}
+
+.init-content {
+  font-size: 1.5vw;
+  font-weight: 300;
+
+  padding: 50px !important;
+}
+
+.move-up {
+  animation: moveUp 1s ease-in-out forwards;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-35vh);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .init {
+    background-position: calc(50% + 50vw) center;
+
+  }
+  .init-content {
+    font-size: 4vw;
+    padding: 20px !important;
+  }
+  .init-click {
+    bottom: 2vh;
+  }
+}
