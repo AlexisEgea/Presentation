@@ -4,11 +4,10 @@
 - **Artificial Intelligence**: 
 Development of a data processing service for an AI project using a text-to-SQL model.
 The project enables automatic generation and display of complex SQL queries from natural language questions asked by users.
-Complete automation of metadata collection and enrichment process (definitions, types, relationships)
+Complete automation of metadata collection and enrichment process (definitions, types, relationships).
 Optimization of information content sent to the model based on the question using advanced techniques (embeddings, weighting, fine token selection)
 - **Automation**: 
-Design from scratch and maintenance of an automated testing platform using Robot Framework (Python) through scripts replicating human behavior to validate treasury management software.
-Understanding requirements, implementing automated solutions, conducting tests, validating results, and documenting issues through Jira ticket creation.
+Design from scratch and maintenance of an automated testing platform using Robot Framework (Python) through scripts replicating human behavior to validate treasury management software. Understanding requirements, implementing automated solutions, conducting tests, validating results, and documenting issues through Jira ticket creation.
 
 **Artificial Intelligence Development Engineer (Internship)**
 *Profile Software*
