@@ -1,4 +1,3 @@
-import { zoomIn } from './zoom.js';
 import { displayContent } from './getContent.js';
 
 function initContent(sectionName) {
@@ -8,22 +7,17 @@ function initContent(sectionName) {
     section.scrollTop = 0;
 
     if (section) {
-        const isZoom = section.classList.contains('zoom');
-        const isDezoom = section.classList.contains('dezoom');
+        const boxDataElement = section.querySelector('.box-data');
+        const boxCoverElement = section.querySelector('.box-cover');
 
-        if (isZoom || isDezoom) {
-            const boxDataElement = section.querySelector('.box-data');
-            const boxCoverElement = section.querySelector('.box-cover');
+        if (boxDataElement) {
+            boxDataElement.style.opacity = 0;
+            boxDataElement.style.visibility ='hidden';
+        }
 
-            if (boxDataElement) {
-                boxDataElement.style.opacity = isZoom ? 1 : 0;
-                boxDataElement.style.visibility = isZoom ? 'visible' : 'hidden';
-            }
-
-            if (boxCoverElement) {
-                boxCoverElement.style.opacity = isZoom ? 0 : 1;
-                boxCoverElement.style.visibility = isZoom ? 'hidden' : 'visible';
-            }
+        if (boxCoverElement) {
+            boxCoverElement.style.opacity = 1;
+            boxCoverElement.style.visibility = 'visible';
         }
     }
 }
