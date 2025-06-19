@@ -3,7 +3,7 @@ Through the theoretical knowledge I acquired during my university studies and en
 Here is a non-exhaustive list of programming paradigms I have explored:
 - Imperative Programming
 - Recursive Programming
-- Object-Oriented Programming (OOP)
+- Object-Oriented Programming
 - Functional Programming
 - Concurrent Programming
 - Logical Programming
