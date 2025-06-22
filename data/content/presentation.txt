@@ -22,7 +22,7 @@ I also incorporate artificial intelligence techniques such as neural network dev
 I have a strong interest in AI and have developed projects in the following three areas:
 1. **Generative AI**: Data Generation, Large Language Models (LLMs), and Prompt Engineering.
 2. **Combinatorial AI**: Development of Intelligent Bots for video games, strategic decision-making, pathfinding, adaptive behaviors in dynamic environments.
-3. **Computer Vision & Real-Time AI**: Designing real-time decision-making algorithms for complex and dynamic environments.
+3. **Computer Vision & Real-Time AI**: Systems that perform object recognition, tracking, scene understanding, and decision-making based on visual input from live camera feeds.
 
 [Section] Technical Skills
 Thanks to the excellent courses I have followed, I have built a solid foundation in Computer Science, particularly in Programming.
