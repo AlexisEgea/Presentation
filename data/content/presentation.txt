@@ -15,19 +15,17 @@ Imagining, designing, and developing such solutions is what motivates me daily.
 I draw inspiration from many areas: everyday life, online information, cinema, series, and video games with complex and immersive mechanics.
 
 [Section] Focus in Software Development
-I believe that software development is not only about writing code, but about creating a project that lives and evolves, a solution that delivers real value to its users.
-
-I aim to design software that fully meets the client’s specifications and business needs, while ensuring a reliable, well-documented, and well-organized architecture.  
-I also focus on writing modular, maintainable, and easily interchangeable code, and strive to deliver optimal performance and efficiency.
+Because programming is not just about writing code, but about creating a living and evolving project that delivers real value to its users, I strive to develop software that aligns with both technical specifications and business needs, while ensuring a reliable, well-documented, and well-structured architecture.
+I also incorporate artificial intelligence techniques such as neural network development, intelligent automation, or generative models when they can enhance the relevance, efficiency, or functional intelligence of the solutions I design.
 
 [Section] Focus Areas in Artificial Intelligence
-I have a strong interest in AI and specialize in three particular areas:
+I have a strong interest in AI and have developed projects in the following three areas:
 1. **Generative AI**: Data Generation, Large Language Models (LLMs), and Prompt Engineering.
 2. **Combinatorial AI**: Development of Intelligent Bots for video games, strategic decision-making, pathfinding, adaptive behaviors in dynamic environments.
-3. **AI for Autonomous Vehicles**: Designing real-time decision-making algorithms for complex and dynamic environments.
+3. **Computer Vision & Real-Time AI**: Designing real-time decision-making algorithms for complex and dynamic environments.
 
 [Section] Technical Skills
-thanks to the excellent courses I have followed, I have built a solid foundation in Computer Science, particularly in Programming.
+Thanks to the excellent courses I have followed, I have built a solid foundation in Computer Science, particularly in Programming.
 
 This mastery of algorithms allows me to be independent of any specific programming language and adapt easily to different contexts and environments.  
 I have worked with more than 10 programming languages, with the main ones being **Java**, **Python**, and **C++**.
