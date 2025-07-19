@@ -2,10 +2,10 @@
 *Profile Login*
 [Section] Paris, France, 2022–2025
 - **Artificial Intelligence**: 
-Development of a data processing service for an AI project using a text-to-SQL model.
+Design and implementation of preprocessing pipelines, custom evaluation metrics, and post-processing workflows for LLMs in an AI project using a text-to-SQL model.
 The project enables automatic generation and display of complex SQL queries from natural language questions asked by users.
 Complete automation of metadata collection and enrichment process (definitions, types, relationships).
-Optimization of information content sent to the model based on the question using advanced techniques (embeddings, weighting, fine token selection)
+Design of advanced retrieval and optimization techniques (e.g., RAG (Retrieval-Augmented Generation), embedding-based filtering, and LLM-as-a-judge evaluation) to adapt contextual information to the user's query, reduce token usage, and improve overall model performance.
 - **Automation**: 
 Design from scratch and maintenance of an automated testing platform using Robot Framework (Python) through scripts replicating human behavior to validate treasury management software. Understanding requirements, implementing automated solutions, conducting tests, validating results, and documenting issues through Jira ticket creation.
 
