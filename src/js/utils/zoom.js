@@ -15,6 +15,11 @@ function createZoomClone(box, boxRect) {
     return clone;
 }
 
+// Returns a stable fullscreen height in px to avoid mobile 100vh jumps.
+function getStableViewportHeightPx() {
+    return `${window.innerHeight}px`;
+}
+
 // Runs the zoom-in animation from a grid card to a fullscreen clone
 export function zoomIn(sectionClass, options = {}) {
     const { disableZoomOutClick = false, onZoomInComplete = null } = options;
@@ -46,7 +51,7 @@ export function zoomIn(sectionClass, options = {}) {
     clone.style.top = '0';
     clone.style.left = '0';
     clone.style.width = '100vw';
-    clone.style.height = '100vh';
+    clone.style.height = getStableViewportHeightPx();
     clone.style.transform = 'scale(1)';
 
     // Notify caller when the zoom-in transition is complete
@@ -89,14 +94,37 @@ function zoomOut(clone, originalRect, sectionClass, onComplete = null) {
         boxDataElement.classList.add('fade-out');
     }
 
-    // Cleanup clone and trigger optional completion callback
-    clone.addEventListener('transitionend', function handler() {
+    // Cleanup clone when a reliable geometric transition reaches its end.
+    // Using a single watched property avoids missing events when some values
+    // do not actually change on specific cards (e.g. left/top already at 0).
+    const watchedProps = new Set(['width', 'height']);
+    let isFinalized = false;
+
+    const finalize = () => {
+        if (isFinalized) {
+            return;
+        }
+        isFinalized = true;
+        clone.removeEventListener('transitionend', onEnd);
         clone.remove();
-        clone.removeEventListener('transitionend', handler);
         if (typeof onComplete === 'function') {
             onComplete();
         }
-    });
+    };
+
+    const onEnd = (event) => {
+        if (event.target !== clone) {
+            return;
+        }
+        if (!watchedProps.has(event.propertyName)) {
+            return;
+        }
+        finalize();
+    };
+
+    clone.addEventListener('transitionend', onEnd);
+    // Safety net for mobile browsers that sometimes miss transitionend.
+    window.setTimeout(finalize, 840);
 }
 
 // Plays the return animation when coming back from a dedicated section page
@@ -112,7 +140,7 @@ export function dezoomFromFullscreen(sectionClass) {
     clone.style.top = '0';
     clone.style.left = '0';
     clone.style.width = '100vw';
-    clone.style.height = '100vh';
+    clone.style.height = getStableViewportHeightPx();
     clone.style.transform = 'scale(1)';
     clone.style.pointerEvents = 'none';
 
