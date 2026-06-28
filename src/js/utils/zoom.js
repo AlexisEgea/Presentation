@@ -1,5 +1,27 @@
-export function zoomIn(sectionClass) {
+// Builds a fixed-position clone of a section card used for zoom animations
+function createZoomClone(box, boxRect) {
+    const clone = box.cloneNode(true);
+    clone.classList.add('zoom-clone');
+    clone.style.position = 'fixed';
+    clone.style.top = `${boxRect.top}px`;
+    clone.style.left = `${boxRect.left}px`;
+    clone.style.width = `${boxRect.width}px`;
+    clone.style.height = `${boxRect.height}px`;
+    clone.style.margin = '0';
+    clone.style.transform = 'scale(1)';
+    clone.style.transformOrigin = 'center center';
+    clone.style.transition = 'transform 0.8s ease-in-out, top 0.8s ease-in-out, left 0.8s ease-in-out, width 0.8s ease-in-out, height 0.8s ease-in-out';
+    clone.style.zIndex = '1000';
+    return clone;
+}
+
+// Runs the zoom-in animation from a grid card to a fullscreen clone
+export function zoomIn(sectionClass, options = {}) {
+    const { disableZoomOutClick = false, onZoomInComplete = null } = options;
     const box = document.querySelector(`.box.${sectionClass}`);
+    if (!box) {
+        return null;
+    }
 
     // Handle fade transitions for box-cover/box-data (Zoom In)
     const boxCoverElement = document.querySelector(`.${sectionClass} .box-cover`);
@@ -14,40 +36,40 @@ export function zoomIn(sectionClass) {
         boxDataElement.classList.add('fade-in');
     }
 
-    // Get current dimensions and position of the box
+    // Create and animate the fullscreen transition clone
     const boxRect = box.getBoundingClientRect();
-    // Clone the box
-    const clone = box.cloneNode(true);
-    clone.classList.add('zoom-clone');
-    clone.style.position = 'fixed';
-    clone.style.top = `${boxRect.top}px`;
-    clone.style.left = `${boxRect.left}px`;
-    clone.style.width = `${boxRect.width}px`;
-    clone.style.height = `${boxRect.height}px`;
-    clone.style.margin = '0';
-    clone.style.transform = 'scale(1)';
-    clone.style.transformOrigin = 'center center';
-    clone.style.transition = 'transform 0.8s ease-in-out, top 0.8s ease-in-out, left 0.8s ease-in-out, width 0.8s ease-in-out, height 0.8s ease-in-out';
-    clone.style.zIndex = '1000';
-    // Add clone to DOM
+    const clone = createZoomClone(box, boxRect);
     document.body.appendChild(clone);
-    // Force reflow to ensure browser registers initial state
+    // Force layout so transition starts from the initial coordinates
     clone.offsetHeight;
-    // Animate to fullscreen
+    // Animate clone to fullscreen bounds
     clone.style.top = '0';
     clone.style.left = '0';
     clone.style.width = '100vw';
     clone.style.height = '100vh';
     clone.style.transform = 'scale(1)';
 
-    // Add click handler to trigger zoomOut
-    clone.addEventListener('click', () => {
-        zoomOut(clone, boxRect, sectionClass);
-    });
+    // Notify caller when the zoom-in transition is complete
+    if (typeof onZoomInComplete === 'function') {
+        clone.addEventListener('transitionend', () => {
+            onZoomInComplete(sectionClass, clone);
+        }, { once: true });
+    }
+
+    // Keep legacy behavior: clicking fullscreen clone returns to grid
+    if (!disableZoomOutClick) {
+        // Add click handler to trigger zoomOut
+        clone.addEventListener('click', () => {
+            zoomOut(clone, boxRect, sectionClass);
+        });
+    }
+
+    return clone;
 }
 
-function zoomOut(clone, originalRect, sectionClass) {
-    // Animate back to original position/size
+// Runs the zoom-out animation from fullscreen clone back to original card
+function zoomOut(clone, originalRect, sectionClass, onComplete = null) {
+    // Animate clone back to the original card rectangle.
     clone.style.top = `${originalRect.top}px`;
     clone.style.left = `${originalRect.left}px`;
     clone.style.width = `${originalRect.width}px`;
@@ -67,9 +89,64 @@ function zoomOut(clone, originalRect, sectionClass) {
         boxDataElement.classList.add('fade-out');
     }
 
-    // Remove clone after animation completes
+    // Cleanup clone and trigger optional completion callback
     clone.addEventListener('transitionend', function handler() {
         clone.remove();
         clone.removeEventListener('transitionend', handler);
+        if (typeof onComplete === 'function') {
+            onComplete();
+        }
+    });
+}
+
+// Plays the return animation when coming back from a dedicated section page
+export function dezoomFromFullscreen(sectionClass) {
+    const box = document.querySelector(`.box.${sectionClass}`);
+    if (!box) {
+        return;
+    }
+
+    // Start from a fullscreen clone  (visually matches the section page)
+    const boxRect = box.getBoundingClientRect();
+    const clone = createZoomClone(box, boxRect);
+    clone.style.top = '0';
+    clone.style.left = '0';
+    clone.style.width = '100vw';
+    clone.style.height = '100vh';
+    clone.style.transform = 'scale(1)';
+    clone.style.pointerEvents = 'none';
+
+    // Blend content into cover while the clone contracts to the target card
+    const cloneCoverElement = clone.querySelector('.box-cover');
+    const cloneDataElement = clone.querySelector('.box-data');
+    if (cloneCoverElement && cloneDataElement) {
+        // Start from content view, then blend into poster during dezoom.
+        cloneCoverElement.style.opacity = '0';
+        cloneCoverElement.style.visibility = 'visible';
+        cloneCoverElement.style.filter = 'blur(8px)';
+        cloneCoverElement.style.transition = 'opacity 0.55s ease, filter 0.55s ease';
+
+        cloneDataElement.style.opacity = '1';
+        cloneDataElement.style.visibility = 'visible';
+        cloneDataElement.style.filter = 'blur(0)';
+        cloneDataElement.style.transition = 'opacity 0.55s ease, filter 0.55s ease';
+    }
+
+    // Hide the original card until the animation clone lands
+    box.style.visibility = 'hidden';
+    document.body.appendChild(clone);
+    clone.offsetHeight;
+
+    // Trigger the blend progression before starting geometric dezoom
+    if (cloneCoverElement && cloneDataElement) {
+        cloneCoverElement.style.opacity = '1';
+        cloneCoverElement.style.filter = 'blur(0)';
+        cloneDataElement.style.opacity = '0';
+        cloneDataElement.style.filter = 'blur(10px)';
+    }
+
+    // Finalize return state and reveal the original card
+    zoomOut(clone, boxRect, sectionClass, () => {
+        box.style.visibility = 'visible';
     });
 }
