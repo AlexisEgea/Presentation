@@ -12,11 +12,16 @@ function resolveBasePath() {
 
 // Fetches and formats a section text file from the data/content directory.
 export async function fetchSectionContent(sectionName) {
+    const content = await fetchSectionText(sectionName);
+    return formatContent(content);
+}
+
+// Fetches raw text content for a section (no formatting applied).
+export async function fetchSectionText(sectionName) {
     const basePath = resolveBasePath();
     const response = await fetch(`${basePath}/data/content/${sectionName}.txt`);
     if (!response.ok) {
         throw new Error(`Unable to load content for section "${sectionName}"`);
     }
-    const content = await response.text();
-    return formatContent(content);
+    return response.text();
 }
