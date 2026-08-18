@@ -1,0 +1,97 @@
+.panel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.panel {
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 30px;
+    min-height: 220px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.8s ease-in-out, all 0.8s ease-in-out;
+}
+
+.panel:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+.panel-title {
+    font-size: 2vw;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.panel-title:has(+ .panel-subtitle) {
+    margin-bottom: 4px;
+}
+
+.panel-subtitle {
+    font-size: 1.75vw;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.panel-meta {
+    font-size: 1.1vw;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.panel-details {
+    font-size: 1.2vw;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.panel-intro {
+    grid-column: 1 / -1;
+    font-size: 1.2vw;
+    line-height: 1.6;
+    text-align: center;
+    margin: 4px 0 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (max-width: 768px) {
+    .panel-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .panel {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .panel-title {
+        font-size: 5vw;
+    }
+
+    .panel-subtitle {
+        font-size: 4.4vw;
+    }
+
+    .panel-meta {
+        font-size: 3.6vw;
+    }
+
+    .panel-details {
+        font-size: 3.4vw;
+    }
+
+    .panel-intro {
+        font-size: 3.5vw;
+        margin-bottom: 6px;
+    }
+}
