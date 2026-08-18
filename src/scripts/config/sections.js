@@ -7,7 +7,6 @@ export const CONTENT_SECTION_IDS = [
     'introduction',
     'certification',
     'programming',
-    'resume',
     'work-experience',
     'personal-project'
 ];
@@ -21,7 +20,6 @@ export const SECTION_PAGE_MAP = {
     'introduction': 'src/pages/introduction.html',
     'certification': 'src/pages/certification.html',
     'programming': 'src/pages/programming.html',
-    'resume': 'src/pages/resume.html',
     'work-experience': 'src/pages/work-experience.html',
     'personal-project': 'src/pages/personal-project.html'
 };
