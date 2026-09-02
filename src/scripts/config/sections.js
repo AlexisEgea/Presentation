@@ -6,7 +6,7 @@ export const CONTENT_SECTION_IDS = [
     'education',
     'introduction',
     'certification',
-    'programming',
+    'settings',
     'work-experience',
     'personal-project'
 ];
@@ -19,7 +19,7 @@ export const SECTION_PAGE_MAP = {
     'education': 'src/pages/education.html',
     'introduction': 'src/pages/introduction.html',
     'certification': 'src/pages/certification.html',
-    'programming': 'src/pages/programming.html',
+    'settings': 'src/pages/settings.html',
     'work-experience': 'src/pages/work-experience.html',
     'personal-project': 'src/pages/personal-project.html'
 };
@@ -46,7 +46,7 @@ export const HOME_ENTRY_ANIMATIONS = {
         enter: { opacity: '0', transform: 'translateX(70px)', transition: 'opacity 0.5s ease-out, transform 0.5s ease-out' },
         final: { opacity: '1', transform: 'translateX(0)' }
     },
-    'programming': {
+    'settings': {
         enter: { opacity: '0', transform: 'translateY(20px)', transition: 'opacity 0.5s ease-out, transform 0.5s ease-out' },
         final: { opacity: '1', transform: 'translateY(0)' }
     },
@@ -94,5 +94,5 @@ export const HOME_ENTRY_ANIMATION_ORDER = [
     'linkedin',
     'soft-skills',
     'resume',
-    'programming'
+    'settings'
 ];
