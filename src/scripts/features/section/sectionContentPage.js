@@ -1,8 +1,11 @@
 import { RETURN_SECTION_KEY } from '../../config/storage.js';
 import { fetchSectionContent } from '../../services/contentService.js';
 import { playPanelEntryAnimation } from './playPanelEntryAnimation.js';
+import { bindPanelExpansion } from './expandPanel.js';
 import { PANEL_RENDERERS } from '../../config/panel.js';
 import { qs } from '../../shared/dom.js';
+
+const PANEL_INTERACTION_SELECTOR = '.panel, .panel-expand-clone, .panel-expand-overlay';
 
 // Binds "click anywhere / Escape" return behavior for section pages.
 function bindReturnShortcut(sectionName) {
@@ -12,11 +15,22 @@ function bindReturnShortcut(sectionName) {
         window.location.href = `../../index.html?from=${encodeURIComponent(sectionName)}`;
     };
 
-    document.addEventListener('click', returnToGrid);
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            returnToGrid();
+    document.addEventListener('click', (event) => {
+        // Ignore clicks on expandable panels so they can open instead of leaving the page.
+        if (event.target.closest(PANEL_INTERACTION_SELECTOR)) {
+            return;
         }
+        returnToGrid();
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') {
+            return;
+        }
+        // Let the expander handle Escape while a panel is open.
+        if (document.body.classList.contains('is-panel-expanded')) {
+            return;
+        }
+        returnToGrid();
     });
 }
 
@@ -41,6 +55,7 @@ export async function initSectionContentPage() {
         if (PanelRenderer) {
             const renderer = new PanelRenderer(sectionName, contentElement);
             await renderer.render();
+            bindPanelExpansion(contentElement);
             playPanelEntryAnimation(contentElement);
             return;
         }

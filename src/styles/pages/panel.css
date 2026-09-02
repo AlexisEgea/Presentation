@@ -6,19 +6,92 @@
 }
 
 .panel {
+    position: relative;
     background-color: #000;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
     padding: 30px;
     min-height: 220px;
+    cursor: pointer;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     transform-origin: center center;
     transform: scale(1);
-    transition: transform 0.8s ease-in-out, all 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out, border-color 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
 }
 
 .panel:hover {
     transform: scale(1.02);
     border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+}
+
+.panel.is-source-hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.panel-expand-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background: rgba(0, 0, 0, 0.52);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+}
+
+.panel-expand-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.panel-expand-clone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.panel-expand-clone:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.panel-expand-clone.is-expanded {
+    border-radius: 32px;
+    padding: 40px 32px;
+    border-color: rgba(255, 255, 255, 0.18);
+    overflow: auto;
+}
+
+.panel-expand-clone.is-expanded .panel-title {
+    font-size: clamp(28px, 3.4vw, 56px);
+    margin-bottom: 18px;
+}
+
+.panel-expand-clone.is-expanded .panel-subtitle {
+    font-size: clamp(20px, 2.2vw, 36px);
+}
+
+.panel-expand-clone.is-expanded .panel-meta {
+    font-size: clamp(16px, 1.4vw, 24px);
+}
+
+.panel-expand-clone.is-expanded .panel-details {
+    font-size: clamp(16px, 1.6vw, 28px);
+    max-width: 42ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panel:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.55);
+    outline-offset: 3px;
 }
 
 .panel-title {
@@ -99,5 +172,16 @@
     .panel-intro {
         font-size: 3.5vw;
         margin-bottom: 6px;
+    }
+
+    .panel-expand-clone.is-expanded {
+        border-radius: 28px;
+        padding: 48px 22px 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panel-expand-overlay {
+        transition: none;
     }
 }
