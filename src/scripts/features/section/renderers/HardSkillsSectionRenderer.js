@@ -51,6 +51,25 @@ export class HardSkillsSectionRenderer extends Section {
             {
                 title: 'Operating Systems',
                 details: 'Comfortable across Linux (Ubuntu), Windows, and macOS.'
+            },
+            {
+                title: 'Programming Paradigms',
+                details:
+                    'Imperative, Recursive, Object-Oriented, Functional, Concurrent, and Logical programming.'
+            },
+            {
+                title: 'Machine Learning Approaches',
+                details:
+                    'Supervised Learning, Unsupervised Learning, Reinforcement Learning, Deep Learning, and Transfer Learning.'
+            },
+            {
+                title: 'Learning Mindset',
+                details:
+                    'Continuous learning, adaptability, and language-agnostic problem-solving in daily practice.'
+            },
+            {
+                title: 'Most Used Languages',
+                details: 'Python, Java, and C++.'
             }
         ];
 
