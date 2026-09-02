@@ -1,11 +1,19 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 .main-grid {
   background: rgba(255, 255, 255, 0.05);
   display: none;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 2fr 3fr 2fr;
   gap: clamp(5px, 1vw, 5px);
   margin: 5px;
-  height: 100vh;
+  height: calc(100vh - 10px);
+  height: calc(100dvh - 10px);
+  overflow: hidden;
 }
 
 .c2-r1 {
@@ -28,7 +36,7 @@
   grid-column: 3;
   grid-row: 2;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 2fr 1fr;
   gap: clamp(5px, 1vw, 10px);
 }
 
