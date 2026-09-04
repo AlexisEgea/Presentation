@@ -3,26 +3,7 @@ import { Section } from './SectionRenderer.js';
 // Custom renderer for the Education page panel layout.
 export class EducationSectionRenderer extends Section {
     async render() {
-        const entries = [
-            {
-                title: "Master's Degree",
-                subtitle: 'Computer Science and Telecommunications',
-                school: "Mines Telecom Institute Nord Europe, Villeneuve-d'Ascq, France",
-                details: 'Specialization: Artificial Intelligence and Computer Vision'
-            },
-            {
-                title: "Bachelor's Degree",
-                subtitle: 'Mathematics and Computer Science',
-                school: 'Claude Bernard University Lyon 1, Lyon, France',
-                details: 'Specialization: Computer Science'
-            },
-            {
-                title: 'Scientific Baccalaureat',
-                subtitle: 'Mathematics',
-                school: 'Centre Scolaire Saint-Marc High School, Lyon, France',
-                details: ''
-            }
-        ];
+        const entries = await this.loadEntries();
 
         this.container.classList.add('panel-grid');
         this.clear();
@@ -31,20 +12,15 @@ export class EducationSectionRenderer extends Section {
             const panel = document.createElement('article');
             panel.className = 'panel';
 
-            const titleElement = this.createElement('h2', 'panel-title', title);
-            const subtitleElement = this.createElement('p', 'panel-subtitle', subtitle);
-            const schoolElement = this.createElement('p', 'panel-meta', school);
-            const detailsElement = this.createElement('p', 'panel-details', details);
-
-            panel.appendChild(titleElement);
+            panel.appendChild(this.createElement('h2', 'panel-title', title));
             if (subtitle) {
-                panel.appendChild(subtitleElement);
+                panel.appendChild(this.createElement('p', 'panel-subtitle', subtitle));
             }
             if (school) {
-                panel.appendChild(schoolElement);
+                panel.appendChild(this.createElement('p', 'panel-meta', school));
             }
             if (details) {
-                panel.appendChild(detailsElement);
+                panel.appendChild(this.createElement('p', 'panel-details', details));
             }
 
             this.container.appendChild(panel);

@@ -1,3 +1,5 @@
+import { fetchSectionEntries } from '../../../services/contentService.js';
+
 // Base class for section page renderers.
 export class Section {
     constructor(sectionName, container) {
@@ -16,6 +18,10 @@ export class Section {
         }
         element.textContent = textContent;
         return element;
+    }
+
+    async loadEntries() {
+        return fetchSectionEntries(this.sectionName);
     }
 
     // Must be implemented by child renderers.
