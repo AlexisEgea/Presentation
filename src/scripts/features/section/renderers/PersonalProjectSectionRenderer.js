@@ -1,14 +1,14 @@
 import { Section } from './SectionRenderer.js';
 
-// Custom renderer for the Education page panel layout.
-export class EducationSectionRenderer extends Section {
+// Custom renderer for the Personal Project page panel layout.
+export class PersonalProjectSectionRenderer extends Section {
     async render() {
         const entries = await this.loadEntries();
 
         this.container.classList.add('panel-grid');
         this.clear();
 
-        entries.forEach(({ title, subtitle, school, details }) => {
+        entries.forEach(({ title, subtitle, details = [] }) => {
             const panel = document.createElement('article');
             panel.className = 'panel';
 
@@ -16,12 +16,13 @@ export class EducationSectionRenderer extends Section {
             if (subtitle) {
                 panel.appendChild(this.createElement('p', 'panel-subtitle', subtitle));
             }
-            if (school) {
-                panel.appendChild(this.createElement('p', 'panel-meta', school));
-            }
-            if (details) {
-                panel.appendChild(this.createElement('p', 'panel-details', details));
-            }
+
+            const body = document.createElement('div');
+            body.className = 'panel-body';
+            details.forEach((paragraph) => {
+                body.appendChild(this.createElement('p', 'panel-details', paragraph));
+            });
+            panel.appendChild(body);
 
             this.container.appendChild(panel);
         });

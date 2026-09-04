@@ -3,75 +3,7 @@ import { Section } from './SectionRenderer.js';
 // Custom renderer for the Hard Skills page panel layout.
 export class HardSkillsSectionRenderer extends Section {
     async render() {
-        const entries = [
-            {
-                title: 'Programming',
-                details: 'Algorithms and development in Java, Python, and C++.'
-            },
-            {
-                title: 'Machine Learning / Deep Learning',
-                details: 'Data generation, model training, testing, and neural network development.'
-            },
-            {
-                title: 'Prompt Engineering',
-                details: 'Prompt optimization for LLMs and generative AI use cases.'
-            },
-            {
-                title: 'Software Architecture',
-                details: 'Reliable, modular, and maintainable architectures for scalable applications.'
-            },
-            {
-                title: 'Full-Stack Development',
-                details: 'Backend features, frontend design, and seamless backend/frontend integration.'
-            },
-            {
-                title: 'Automation',
-                details: 'Tools and processes to automate complex or human-like workflows.'
-            },
-            {
-                title: 'Containerization & Deployment',
-                details: 'Docker usage and deployment across multiple environments.'
-            },
-            {
-                title: 'Version Control & Collaboration',
-                details: 'Advanced GitHub usage, collaborative workflows, and CI/CD principles.'
-            },
-            {
-                title: 'Virtual Environments',
-                details: 'Venv, Conda, and environment management for reproducible setups.'
-            },
-            {
-                title: 'IDE Proficiency',
-                details: 'Daily usage of Cursor, Windsurf, VS Code, and JetBrains IDEs.'
-            },
-            {
-                title: 'AI Tools',
-                details: 'Hands-on with GPT, Grok, Claude Sonnet, Hugging Face, and ComfyUI.'
-            },
-            {
-                title: 'Operating Systems',
-                details: 'Comfortable across Linux (Ubuntu), Windows, and macOS.'
-            },
-            {
-                title: 'Programming Paradigms',
-                details:
-                    'Imperative, Recursive, Object-Oriented, Functional, Concurrent, and Logical programming.'
-            },
-            {
-                title: 'Machine Learning Approaches',
-                details:
-                    'Supervised Learning, Unsupervised Learning, Reinforcement Learning, Deep Learning, and Transfer Learning.'
-            },
-            {
-                title: 'Learning Mindset',
-                details:
-                    'Continuous learning, adaptability, and language-agnostic problem-solving in daily practice.'
-            },
-            {
-                title: 'Most Used Languages',
-                details: 'Python, Java, and C++.'
-            }
-        ];
+        const entries = await this.loadEntries();
 
         this.container.classList.add('panel-grid');
         this.clear();
@@ -80,11 +12,8 @@ export class HardSkillsSectionRenderer extends Section {
             const panel = document.createElement('article');
             panel.className = 'panel';
 
-            const titleElement = this.createElement('h2', 'panel-title', title);
-            const detailsElement = this.createElement('p', 'panel-details', details);
-
-            panel.appendChild(titleElement);
-            panel.appendChild(detailsElement);
+            panel.appendChild(this.createElement('h2', 'panel-title', title));
+            panel.appendChild(this.createElement('p', 'panel-details', details));
             this.container.appendChild(panel);
         });
     }

@@ -25,3 +25,15 @@ export async function fetchSectionText(sectionName) {
     }
     return response.text();
 }
+
+// Fetches structured panel entries from a JSON file in data/content.
+export async function fetchSectionEntries(sectionName) {
+    const basePath = resolveBasePath();
+    const response = await fetch(`${basePath}/data/content/${sectionName}.json`);
+    if (!response.ok) {
+        throw new Error(`Unable to load entries for section "${sectionName}"`);
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? data : data.entries;
+}
