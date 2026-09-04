@@ -10,13 +10,12 @@ export const PANEL_RENDERERS = {
     'hard-skills': HardSkillsSectionRenderer
 };
 
-export const PANEL_ENTRY_TRANSITION = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+export const PANEL_ENTRY_TRANSITION = 'opacity 0.5s ease-out';
 
-// Direction variants aligned with the home grid reveal.
 export const PANEL_ENTRY_ANIMATIONS = [
     {
-        enter: { opacity: '0', transform: 'translateX(-70px)', transition: PANEL_ENTRY_TRANSITION },
-        final: { opacity: '1', transform: 'translateX(0)' }
+        enter: { opacity: '0', transition: PANEL_ENTRY_TRANSITION },
+        final: { opacity: '1' }
     }
 ];
 
