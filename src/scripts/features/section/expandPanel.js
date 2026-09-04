@@ -17,7 +17,7 @@ function prefersReducedMotion() {
 // Builds the CSS transition used while a panel expands or collapses.
 function getExpandTransition() {
     const duration = prefersReducedMotion() ? 0 : PANEL_EXPAND_DURATION_MS;
-    const properties = ['top', 'left', 'width', 'height', 'border-radius', 'padding'];
+    const properties = ['top', 'left', 'width', 'height', 'border-radius', 'padding', 'box-shadow'];
     return properties
         .map((property) => `${property} ${duration}ms ${PANEL_EXPAND_EASING}`)
         .join(', ');
@@ -117,14 +117,20 @@ function collapsePanel() {
         }
         isFinalized = true;
         clone.removeEventListener('transitionend', onEnd);
-        clone.remove();
-        overlay.remove();
         panel.classList.remove('is-source-hidden');
+        panel.classList.add('is-restoring');
         panel.setAttribute('aria-expanded', 'false');
         panel.removeAttribute('aria-hidden');
         document.body.classList.remove('is-panel-expanded');
         document.body.style.removeProperty('overflow');
-        activeExpansion = null;
+        requestAnimationFrame(() => {
+            clone.remove();
+            overlay.remove();
+            activeExpansion = null;
+            window.setTimeout(() => {
+                panel.classList.remove('is-restoring');
+            }, 50);
+        });
     };
 
     // Finalizes only after the clone size has finished transitioning.
