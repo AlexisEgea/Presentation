@@ -1,6 +1,6 @@
 import { animateCloneToRect, applyFullscreenCloneStyle, createZoomClone } from './zoomClone.js';
 
-const COVER_FADE_TRANSITION = 'opacity 0.7s ease-out';
+const COVER_FADE_TRANSITION = 'opacity 1s ease-out';
 
 // Shrinks the fullscreen clone back to its original card position.
 export function zoomOut(clone, originalRect, sectionClass, onComplete = null, options = {}) {
