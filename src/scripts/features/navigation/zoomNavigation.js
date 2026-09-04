@@ -1,6 +1,7 @@
 import { SECTION_PAGE_MAP } from '../../config/sections.js';
 import { RETURN_SECTION_KEY } from '../../config/storage.js';
-import { dezoomFromFullscreen, zoomIn } from './zoomAnimator.js';
+import { dezoomFromFullscreen } from './dezoom.js';
+import { zoomIn } from './zoom.js';
 import { qsa, qs } from '../../shared/dom.js';
 
 // Guards against repeated clicks while a zoom navigation is already in progress.
