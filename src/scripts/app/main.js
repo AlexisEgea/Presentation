@@ -1,5 +1,8 @@
 import { playHomeEntryAnimation } from '../features/home/playHomeEntryAnimation.js';
 import { bindZoomNavigation, restoreFromReturnFlow } from '../features/navigation/zoomNavigation.js';
+import { applyStoredTheme } from '../features/theme/applyTheme.js';
+
+applyStoredTheme();
 
 // Home page entrypoint: restore return flow or run initial home setup.
 document.addEventListener('DOMContentLoaded', () => {
