@@ -178,7 +178,19 @@ function expandPanel(panel) {
     };
 
     // Closes the expanded panel on backdrop/card clicks, unless a control was used.
+    let touchMoved = false;
+    const onTouchStart = () => {
+        touchMoved = false;
+    };
+    const onTouchMove = () => {
+        touchMoved = true;
+    };
     const onDismissClick = (event) => {
+        if (touchMoved) {
+            touchMoved = false;
+            event.stopPropagation();
+            return;
+        }
         if (event.target.closest('.settings-control')) {
             event.stopPropagation();
             return;
@@ -187,6 +199,8 @@ function expandPanel(panel) {
         collapsePanel();
     };
 
+    clone.addEventListener('touchstart', onTouchStart, { passive: true });
+    clone.addEventListener('touchmove', onTouchMove, { passive: true });
     clone.addEventListener('click', onDismissClick);
     overlay.addEventListener('click', onDismissClick);
     document.addEventListener('keydown', onKeydown);

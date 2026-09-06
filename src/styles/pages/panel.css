@@ -86,6 +86,8 @@
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
     overflow: auto;
     overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 .panel-body .panel-details + .panel-details {
