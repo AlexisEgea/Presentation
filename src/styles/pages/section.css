@@ -1,7 +1,7 @@
 .section-page {
     min-height: 100vh;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-section);
+    color: var(--color-section-text);
     padding: 50px;
 }
 
@@ -20,7 +20,7 @@
 
 .section-content hr {
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid color-mix(in srgb, var(--color-section-text) 20%, transparent);
     margin: 18px 0;
 }
 

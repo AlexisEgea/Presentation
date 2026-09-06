@@ -2,6 +2,7 @@ import { CertificationSectionRenderer } from '../features/section/renderers/Cert
 import { EducationSectionRenderer } from '../features/section/renderers/EducationSectionRenderer.js';
 import { HardSkillsSectionRenderer } from '../features/section/renderers/HardSkillsSectionRenderer.js';
 import { PersonalProjectSectionRenderer } from '../features/section/renderers/PersonalProjectSectionRenderer.js';
+import { SettingsSectionRenderer } from '../features/section/renderers/SettingsSectionRenderer.js';
 import { SoftSkillsSectionRenderer } from '../features/section/renderers/SoftSkillsSectionRenderer.js';
 import { WorkExperienceSectionRenderer } from '../features/section/renderers/WorkExperienceSectionRenderer.js';
 
@@ -11,7 +12,8 @@ export const PANEL_RENDERERS = {
     'soft-skills': SoftSkillsSectionRenderer,
     'hard-skills': HardSkillsSectionRenderer,
     'work-experience': WorkExperienceSectionRenderer,
-    'personal-project': PersonalProjectSectionRenderer
+    'personal-project': PersonalProjectSectionRenderer,
+    settings: SettingsSectionRenderer
 };
 
 export const PANEL_ENTRY_TRANSITION = 'opacity 0.5s ease-out';

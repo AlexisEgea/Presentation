@@ -1,0 +1,52 @@
+{
+  "title": "Color Theme",
+  "details": "Choose Dark, Light, or custom colors for the site.",
+  "modes": [
+    {
+      "id": "dark",
+      "title": "Dark",
+      "details": "Current site colors: black backgrounds and white text."
+    },
+    {
+      "id": "light",
+      "title": "Light",
+      "details": "White backgrounds with text that stays readable."
+    },
+    {
+      "id": "custom",
+      "title": "Custom",
+      "details": "Choose the page, section, and panel colors yourself."
+    }
+  ],
+  "colors": [
+    {
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "id": "section",
+      "label": "Section"
+    },
+    {
+      "id": "panel",
+      "label": "Panel"
+    }
+  ],
+  "customTitle": "Custom colors",
+  "liquidGlass": {
+    "title": "Liquid Glass",
+    "details": "Frosted, translucent surfaces inspired by Apple Liquid Glass.",
+    "options": [
+      {
+        "id": "on",
+        "title": "On",
+        "details": "Enable blur, translucency, and a light glass edge."
+      },
+      {
+        "id": "off",
+        "title": "Off",
+        "details": "Keep solid backgrounds without the glass effect."
+      }
+    ]
+  }
+}

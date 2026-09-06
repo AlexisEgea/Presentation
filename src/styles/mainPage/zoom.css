@@ -1,15 +1,17 @@
 .box {
+  position: relative;
   transform-origin: center center;
   transform: scale(1);
   transition: transform 0.8s ease-in-out, all 0.8s ease-in-out;
-  background-color: #000;
+  background-color: var(--color-section);
+  color: var(--color-section-text);
   border-radius: 20px;
   max-height: 100%;
 }
 
 .fullscreen-active {
   transform: scale(1);
-  background-color: #000;
+  background-color: var(--color-section);
 }
 
 .zoom-clone {
@@ -34,6 +36,14 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  z-index: 1;
+  color: var(--color-section-text);
+}
+
+.box-cover,
+.box > .link {
+  position: absolute;
+  inset: 0;
   z-index: 1;
 }
 
