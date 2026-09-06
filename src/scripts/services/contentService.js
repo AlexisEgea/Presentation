@@ -10,30 +10,24 @@ function resolveBasePath() {
     return '';
 }
 
-// Fetches and formats a section text file from the data/content directory.
-export async function fetchSectionContent(sectionName) {
-    const content = await fetchSectionText(sectionName);
-    return formatContent(content);
-}
-
-// Fetches raw text content for a section (no formatting applied).
-export async function fetchSectionText(sectionName) {
+// Fetches structured JSON content from the data/content directory.
+export async function fetchSectionData(sectionName) {
     const basePath = resolveBasePath();
-    const response = await fetch(`${basePath}/data/content/${sectionName}.txt`);
+    const response = await fetch(`${basePath}/data/content/${sectionName}.json`);
     if (!response.ok) {
         throw new Error(`Unable to load content for section "${sectionName}"`);
     }
-    return response.text();
+    return response.json();
+}
+
+// Fetches and formats a text-based section (introduction, presentation).
+export async function fetchSectionContent(sectionName) {
+    const data = await fetchSectionData(sectionName);
+    return formatContent(data);
 }
 
 // Fetches structured panel entries from a JSON file in data/content.
 export async function fetchSectionEntries(sectionName) {
-    const basePath = resolveBasePath();
-    const response = await fetch(`${basePath}/data/content/${sectionName}.json`);
-    if (!response.ok) {
-        throw new Error(`Unable to load entries for section "${sectionName}"`);
-    }
-
-    const data = await response.json();
+    const data = await fetchSectionData(sectionName);
     return Array.isArray(data) ? data : data.entries;
 }
