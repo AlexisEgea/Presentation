@@ -88,6 +88,10 @@ html[data-liquid-glass="on"] .panel > * {
   z-index: 1;
 }
 
+html[data-liquid-glass="on"] .panel-expand-clone.is-expanded {
+  overflow: auto;
+}
+
 html[data-liquid-glass="on"] .settings-choice {
   background: color-mix(in srgb, var(--color-panel-text) 8%, transparent);
   backdrop-filter: blur(16px) saturate(160%);
