@@ -60,8 +60,8 @@ html[data-liquid-glass="on"] .panel:not(.is-expanded) {
 }
 
 html[data-liquid-glass="on"] .panel {
-  background-color: color-mix(in srgb, var(--color-panel) 22%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-panel-text) 34%, transparent);
+  background-color: color-mix(in srgb, var(--color-panel) 42%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-panel) 55%, var(--color-panel-text));
 }
 
 html[data-liquid-glass="on"] .box,
@@ -78,11 +78,22 @@ html[data-liquid-glass="on"] .box::before {
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
+}
+
+html[data-liquid-glass="on"] .panel::before {
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--color-panel-text) 22%, transparent) 0%,
+    color-mix(in srgb, var(--color-panel) 28%, transparent) 100%
+  );
+}
+
+html[data-liquid-glass="on"] .box::before {
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   background: linear-gradient(
     165deg,
-    color-mix(in srgb, var(--color-panel-text) 22%, transparent) 0%,
+    color-mix(in srgb, var(--color-section-text) 22%, transparent) 0%,
     transparent 42%
   );
 }
