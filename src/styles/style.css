@@ -48,13 +48,15 @@ html[data-liquid-glass="on"] .panel,
 html[data-liquid-glass="on"] .box {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
   box-shadow:
     inset 0 1px 0 color-mix(in srgb, var(--color-panel-text) 38%, transparent),
     inset 0 -1px 0 color-mix(in srgb, var(--color-panel) 30%, transparent),
     0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+html[data-liquid-glass="on"] .box,
+html[data-liquid-glass="on"] .panel:not(.is-expanded) {
+  overflow: hidden;
 }
 
 html[data-liquid-glass="on"] .panel {
@@ -76,6 +78,8 @@ html[data-liquid-glass="on"] .box::before {
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   background: linear-gradient(
     165deg,
     color-mix(in srgb, var(--color-panel-text) 22%, transparent) 0%,
@@ -90,6 +94,9 @@ html[data-liquid-glass="on"] .panel > * {
 
 html[data-liquid-glass="on"] .panel-expand-clone.is-expanded {
   overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 html[data-liquid-glass="on"] .settings-choice {
@@ -101,11 +108,15 @@ html[data-liquid-glass="on"] .settings-choice {
 }
 
 @media (prefers-reduced-transparency: reduce) {
+  html[data-liquid-glass="on"] .panel::before,
+  html[data-liquid-glass="on"] .box::before {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   html[data-liquid-glass="on"] .panel,
   html[data-liquid-glass="on"] .box,
   html[data-liquid-glass="on"] .fullscreen-active {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
     background-color: var(--color-panel);
   }
 
