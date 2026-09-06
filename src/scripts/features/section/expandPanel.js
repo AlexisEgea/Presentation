@@ -177,8 +177,12 @@ function expandPanel(panel) {
         }
     };
 
-    // Closes the expanded panel on any click, without returning to the home grid.
+    // Closes the expanded panel on backdrop/card clicks, unless a control was used.
     const onDismissClick = (event) => {
+        if (event.target.closest('.settings-control')) {
+            event.stopPropagation();
+            return;
+        }
         event.stopPropagation();
         collapsePanel();
     };
